@@ -7,9 +7,11 @@ if platform.system() == 'Windows':
     libpath = os.path.dirname(os.path.realpath(__file__)) + "/single_pitch.dll"
 elif platform.system() == 'Darwin':
     libpath = os.path.dirname(os.path.realpath(__file__)) + "/single_pitch.dylib"
-else:  # Assume Linux
+elif platform.system() == 'Linux':
     libpath = os.path.dirname(os.path.realpath(__file__)) + "/single_pitch.so"
-
+else: # break, unknown system
+    raise Exception("Unknown system")
+    
 lib = ctypes.cdll.LoadLibrary(libpath)
 
 
