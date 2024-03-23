@@ -12,6 +12,8 @@ PLAN (In class / Teams / Remote): No installation required, you can run the code
 
 Assignment: [Introduction to Natural Language Processing with PyTorch](https://learn.microsoft.com/en-us/training/modules/intro-natural-language-processing-pytorch/), 55 min, 7 Units
 
+If you want to learn more, you can find in depth tutorials for Pytorch and its domain-specific components at [https://pytorch.org/tutorials/](https://pytorch.org/tutorials/)
+
 ## MATLAB Path
 
 Not comfortable with Python? No problem, open and explore these Interactive Examples in MATLAB Online
