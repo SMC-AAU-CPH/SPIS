@@ -6,6 +6,8 @@
 
 ### 1.0 TODO Physiological (EEG/HR) / Movement Tools for MED8
 
+* torchEEG: [github](https://github.com/torcheeg/torcheeg), [documentation](https://torcheeg.readthedocs.io), [Medium Article](https://medium.com/@tczhangzhi/torcheeg-a-pytorch-lib-for-deep-eeg-analysis-a25ca12175e8). Uses Graph NN.
+
 ### 1.1 AIVA
 
 - Main: https://aiva.ai/
@@ -62,7 +64,7 @@
 
 * Google Music LM: https://google-research.github.io/seanet/musiclm/examples/
 * Meta AudioCraft: https://audiocraft.metademolab.com/
-  * AudioBox https://ai.meta.com/blog/audiobox-generating-audio-voice-natural-language-prompts/
+  * 🔥 AudioBox https://ai.meta.com/blog/audiobox-generating-audio-voice-natural-language-prompts/
 * A web UI for LLMs https://sonauto.app/ (requires Google log in)
 
 ## Part 2 (Ernests & Anders)
@@ -79,7 +81,7 @@ Suggestion: DAFx all-pass, neutune, or differential DSP
 
 ### 3.1 Project initiation and work (1h)
 
-We use ./04-MusicalGestures for 
+We use ./04-MusicalGestures for
 
 SMC can integrate 🔥 **Neutone**: https://neutone.space/ in their workflow: create a short musical piece. Ensure to use demucs for source seperation and several generative models together. Be *mindful* [about the resources](https://github.com/QosmoInc/neutone_sdk/pull/48) (sampling rate, buffer size, Real-time factor, latency etc): In most cases you'll be able to run max three instances even on a high-end computer.
 
