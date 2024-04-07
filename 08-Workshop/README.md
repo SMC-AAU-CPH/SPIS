@@ -67,17 +67,11 @@
   * 🔥 AudioBox https://ai.meta.com/blog/audiobox-generating-audio-voice-natural-language-prompts/
 * A web UI for LLMs https://sonauto.app/ (requires Google log in)
 
-## Part 2 (Ernests & Anders)
+# Part 2 ML for Audio (Anders R Bargum)
 
-### 2.1 Ernests
+See [08-Workshop/README.md]()
 
-Suggestion: Time Series -> ARIMA -> BioX data and processing
-
-### 2.2 Anders (1.5 H))
-
-Suggestion: DAFx all-pass, neutune, or differential DSP
-
-## Part 3 (Projects)
+# Part 3 (Projects)
 
 ### 3.1 Project initiation and work (1h)
 
