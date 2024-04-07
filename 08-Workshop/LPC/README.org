@@ -1,17 +1,23 @@
 #+title: Linear Prediction
 
+* COMMENT FIXES
+
+** TODO [[cite:&Harma01]], etc.
+
 * The importance of linear prediction and coding 
 
 Linear prediction and coding (LPC) play a crucial role in digital signal processing (DSP) and cognitive science. By making predictions about the future based on past experiences and sensory input, our brains are able to anticipate and respond to changes in the environment in a more efficient and adaptive manner. This process of prediction allows the brain to generate expectations about what will happen next, which helps to reduce surprise and uncertainty. Linear coding, on the other hand, involves representing sensory input in a way that can be efficiently processed and used for making predictions. By encoding sensory information in a linear fashion, a DSP system (or the brain) can extract relevant features and patterns from complex input and build a more accurate model of the world.
 
 In computational cognitive science, LPC helps to simulate the optimization of the brain's internal models and improve its ability to make accurate predictions about the environment. This, in turn, allows for more efficient action selection and decision-making, ultimately enhancing the brain's ability to adapt and survive in a constantly changing world.
 
-In [[https://www.mathworks.com/help/releases/R2024a/signal/signal-modeling-subcategory.html][DSP]], LPC is used for signal modeling. It provides also an excellent introduction to parametric spectral estimation. For more information about LPC in DSP, please refer to 
+In [[https://www.mathworks.com/help/releases/R2024a/signal/signal-modeling-subcategory.html][DSP]], LPC is used for signal modeling. It provides also an excellent introduction to parametric spectral estimation. 
+
+For more information about LPC in DSP, please refer to 
 
 - [[https://www.mathworks.com/help/releases/R2024a/signal/signal-modeling-subcategory.html?s_tid=CRUX_topnav][Matlab DSP Toolbox Examples]]
 - Linear Prediction as a Representation in [[https://speechprocessingbook.aalto.fi/Representations/Linear_prediction.html]]
 
-Below we provide a short introduction to 
+Below we provide a short introduction to the differentiable LPC.
 
 * Speech Decomposition with Source Filter Model
 :PROPERTIES:
@@ -24,11 +30,9 @@ In this example, we decompose a speech signal into its source \(e[n]\) and filte
 s[n] = e[n] + \sum_{k=1}^M a_k s[n-k]
 \]
 
-We'll first use the traditional method to estimate the LPC filter, and
-then we'll use our differentiable LPC to do end-to-end decomposition.
+We'll first use the traditional method to estimate the LPC filter, and then we'll use our differentiable LPC to do end-to-end decomposition.
 
-Again, let's first import the necessary packages and define some helper
-functions.
+Again, let's first import the necessary packages and define some helper functions.
 
 #+begin_src jupyter-python
 import torch
@@ -40,7 +44,7 @@ from torchaudio.functional import lfilter
 import matplotlib.pyplot as plt
 from typing import Optional, Tuple, List, Union
 from IPython.display import Audio
-import diffsptk
+import diffsptk # pip install diffsptk==1.2.1 (the current version 2.0.0 has breaking changes)
 #+end_src
 
 #+begin_src jupyter-python
@@ -97,27 +101,11 @@ def plot_f(
         plt.legend()
 #+end_src
 
-We're going to use a speech sample from the
-[[http://festvox.org/cmu_arctic/][CMU Arctic]] speech synthesis
-database.
+We're going to use a speech sample from the [[http://festvox.org/cmu_arctic/][CMU Arctic]] speech synthesis database.
 
 #+begin_src jupyter-python
 !wget "http://festvox.org/cmu_arctic/cmu_arctic/cmu_us_awb_arctic/wav/arctic_a0007.wav"
 #+end_src
-
-#+begin_example
---2023-11-01 12:40:09--  http://festvox.org/cmu_arctic/cmu_arctic/cmu_us_awb_arctic/wav/arctic_a0007.wav
-Resolving festvox.org (festvox.org)... 199.4.150.153
-Connecting to festvox.org (festvox.org)|199.4.150.153|:80... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 128044 (125K) [audio/x-wav]
-Saving to: ‘arctic_a0007.wav.2’
-
-arctic_a0007.wav.2  100%[===================>] 125.04K   320KB/s    in 0.4s    
-
-2023-11-01 12:40:10 (320 KB/s) - ‘arctic_a0007.wav.2’ saved [128044/128044]
-
-#+end_example
 
 #+begin_src jupyter-python
 y, sr = torchaudio.load("arctic_a0007.wav")
@@ -130,11 +118,6 @@ plt.show()
 
 Audio(y.numpy(), rate=sr)
 #+end_src
-
-[[file:42da7dfd6568ad854d8c9b0846645b43c1da8c9a.png]]
-
-#+RESULTS:
-: <IPython.lib.display.Audio object>
 
 Let's pick up one short segment from the speech, with relatively static
 pitch and formants for a stationary model.
@@ -150,8 +133,6 @@ plot_f([target.numpy()], sr=sr)
 plt.show()
 #+end_src
 
-[[file:34468af2d1255a8fbe7adb11c9c5a9e0190c64ca.png]]
-
 ** Classic LPC Estimation
 :PROPERTIES:
 :CUSTOM_ID: classic-lpc-estimation
@@ -164,9 +145,9 @@ minimising the prediction error \(e[n]\):
 \min_{a_k} \left( s[n] - \sum_{k=1}^M a_k s[n-k] \right)^2 = \min_{a_k} e[n]^2
 \]
 
-Its least squares solution can be computed from the autocorrelation of
-the signal {cite}=makhoul1975linear=. We'll use the =diffsptk= package
-to compute this.
+Its least squares solution can be computed from the autocorrelation of the signal {cite}=makhoul1975linear=. 
+
+We'll use the =diffsptk= package to compute this.
 
 #+begin_src jupyter-python
 lpc_order = 18
@@ -177,12 +158,7 @@ gain, coeffs = lpc(target).split([1, lpc_order], dim=-1)
 print(f"Gain: {gain.item()}")
 #+end_src
 
-#+begin_example
-Gain: 0.22559228539466858
-#+end_example
-
-If we plot the spectrum of the LPC filter, we'd see that it approximates
-the spectral envelope of the signal.
+If we plot the spectrum of the LPC filter, we'd see that it approximates the spectral envelope of the signal.
 
 #+begin_src jupyter-python
 freq_response = (
@@ -210,8 +186,6 @@ plot_f(
 )
 plt.show()
 #+end_src
-
-[[file:237c3a14dd56149f0d0ae67d914015bdb8ec16df.png]]
 
 We can get the source (or residual) \(e[n]\) by inverse filtering the
 signal with the LPC coefficients, which is equivalent to the filtering
@@ -245,7 +219,6 @@ plot_f([e.numpy()], sr=sr)
 plt.show()
 #+end_src
 
-[[file:a2916696d9903e82fc1a0b5723a148d185c04749.png]]
 
 ** Decomposing Speech with Differentiable LPC and a Glottal Flow Model
 :PROPERTIES:
@@ -321,7 +294,6 @@ plt.ylabel("Amplitude")
 plt.show()
 #+end_src
 
-[[file:fdbbd3593fbb26b5e0e6245ed5f893a9894f81be.png]]
 
 #+begin_src jupyter-python
 # 0.3 <= Rd <= 2.7 is a reasonable range for Rd
@@ -342,8 +314,6 @@ plt.ylabel("Table index")
 plt.colorbar()
 plt.show()
 #+end_src
-
-[[file:d408e80f2cf5c84a0225fd96cc9b5cdab5ee7f7b.png]]
 
 The full model we're going to use is:
 
@@ -496,12 +466,6 @@ print(f"f0: {model.f0.item()}")
 print(f"Offset: {model.offset.item() % 1}")
 #+end_src
 
-#+begin_example
-Gain: 0.27253180742263794
-Rd: 0.9100430011749268
-f0: 130.0
-Offset: 0.0
-#+end_example
 
 #+begin_src jupyter-python
 with torch.no_grad():
@@ -520,12 +484,7 @@ plot_f(
 plt.show()
 #+end_src
 
-[[file:1b4e859c8c2846cfbf538a2a077bedd5d30699f2.png]]
-
-Let's optimise the parameters with gradient descent. We're going to use
-the famous Adam optimiser with a learning rate of 0.001 and run it for
-2000 iterations. The loss function we're going to use is the L1 loss
-between the original signal and the modelled signal.
+Let's optimise the parameters with gradient descent. We're going to use the famous Adam optimiser with a learning rate of 0.001 and run it for 2000 iterations. The loss function we're going to use is the L1 loss between the original signal and the modelled signal.
 
 #+begin_src jupyter-python
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
@@ -545,7 +504,6 @@ plt.ylabel("Loss")
 plt.show()
 #+end_src
 
-[[file:ebc2fb7b092fa47b0e5149a410daaa718e196b0a.png]]
 
 #+begin_src jupyter-python
 with torch.no_grad():
@@ -568,19 +526,7 @@ plot_f(
 plt.show()
 #+end_src
 
-#+begin_example
-Gain: 0.18433158099651337
-Rd: 1.5502203702926636
-f0: 131.0266876220703
-Offset: 0.9483504593372345
-#+end_example
-
-[[file:7665265484c1fc854d600f11d6fe67a6ed9da3aa.png]]
-
-Wow, this is pretty good! We can see that the model reconstructs the
-original signal quite well with very similar waveforms. Moreover, the
-model tells what are the optimal parameters to construct the source
-signal. Let's see what is the source signal looks like.
+Wow, this is pretty good! We can see that the model reconstructs the original signal quite well with very similar waveforms. Moreover, the model tells what are the optimal parameters to construct the source signal. Let's see what is the source signal looks like.
 
 #+begin_src jupyter-python
 with torch.no_grad():
@@ -598,8 +544,6 @@ plot_f(
 )
 plt.show()
 #+end_src
-
-[[file:97c939e40ca376580564bb3c5a7ef54d6f3dccfe.png]]
 
 Let's compare the spectrum of the two filters.
 
@@ -645,14 +589,8 @@ plot_f(
 plt.show()
 #+end_src
 
-[[file:d0cb68d01e44e769f66d02d95095da95632e50cb.png]]
 
-Interestingly, the two filters looks very different. The biggest reason
-is because we restricted the source signal to have specific shapes. The
-gradient method also can not achieve a lossless decomposition, while the
-classic LPC method can. However, the source signal we get from the
-gradient method is much more interpretable. In fact, the latter method
-is a simplified version of the synthesiser used in GOLF vocoder proposed
-by Yu [[cite:&Yu-2023]].
+Interestingly, the two filters looks very different. The biggest reason is because we restricted the source signal to have specific shapes. The gradient method also can not achieve a lossless decomposition, while the classic LPC method can. However, the source signal we get from the gradient method is much more interpretable. In fact, the latter method is a simplified version of the synthesiser used in GOLF vocoder proposed by Yu [[cite:&Yu-2023]].
 
 bibliography:cerkut.bib
+
