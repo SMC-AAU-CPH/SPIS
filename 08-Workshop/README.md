@@ -1,8 +1,8 @@
-.
-
 # SPIS-Workshop-25 on 9.4 12:30 onwards
 
-## Part 1
+## Part 1: Parametric Methos (with LPC as an example)
+
+* [LPC Notebook](./LPC/README.ipynb)
 
 ### 1.0 TODO Physiological (EEG/HR) / Movement Tools for MED8
 
