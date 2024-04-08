@@ -69,7 +69,7 @@
 
 # Part 2 ML for Audio (Anders R Bargum)
 
-See [08-Workshop/README.md]()
+See [08-Workshop/ML_for_Audio.ipynb](./ML_for_Audio.ipynb)
 
 # Part 3 (Projects)
 
