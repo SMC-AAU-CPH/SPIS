@@ -15,7 +15,15 @@ on:
     branches:
     - main
 
-# This job installs dependencies, builds the book, and pushes it to `gh-pages`
+env:
+  BASE_URL: /${{ github.event.repository.name }}
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
@@ -35,20 +43,10 @@ jobs:
       run: |
         pip install -r requirements.txt
 
-    # (optional) Cache your executed notebooks between runs
-    # if you have config:
-    # execute:
-    #   execute_notebooks: cache
-    - name: cache executed notebooks
-      uses: actions/cache@v3
-      with:
-        path: _build/.jupyter_cache
-        key: jupyter-book-cache-${{ hashFiles('requirements.txt') }}
-
-    # Build the book
-    - name: Build the book
-      run: |
-        jupyter-book build .
+      # Build the book
+      - name: Build the book
+        run: |
+          jupyter-book build my_book
 
     # Upload the book's HTML as an artifact
     - name: Upload artifact
