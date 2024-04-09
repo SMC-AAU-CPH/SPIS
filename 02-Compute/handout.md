@@ -2,13 +2,12 @@
 
 This handout is intended to help you navigate and kick-off your Python
 development journey by using modern workflows. It is oriented towards
-beginners, so in case of more advanced students, feel free to skip some
-parts, although this handout may also act as a cheat-sheet or a
+beginners; advanced students may skip some parts, but use this handout as a cheat-sheet or a
 refresher!
 
-List of learning outcomes
+## List of learning outcomes
 
-1.  Familiarization with Google Collab programming environment
+1.  Familiarization with Google Collab 
 
 2.  Learning basics of Git (most popular commands) and understanding the
     core workflow (local-remote repository)
@@ -19,7 +18,7 @@ List of learning outcomes
 
 5.  Development tools (VSCode, GitHub Copilot)
 
-# Google Collab {#sect:gcollab}
+# Google Collab
 
 Google Collab[^1] is a browser-based Python notebook[^2] programming
 environment, meaning that you can execute Python code and write
@@ -34,28 +33,21 @@ writing this handout, the code is executed with Python 3.10.
 
 ## Example Notebook
 
-Open the attached *HelloSPIS.ipynb* notebook in Collab and go through
-the following steps.
+Open the attached *HelloSPIS.ipynb* notebook in Collab and go through the following steps.
 
-1.  Open Collab and upload the notebook. *File → Open Notebook →
-    Upload*.
+1.  Open Collab and upload the notebook. *File → Open Notebook → Upload*.
 
 2.  Execute each cell with *Ctrl + Shift*
 
 3.  Execute all cells *Runtime → Run All (Ctrl + F9)*
 
-4.  Enable free GPU acceleration. *Runtime → Change Runtime Type →
-    Select your Hardware Acceleration (T4)*. Useful for any GPU
-    acceleration base applications, e.g. machine learning.
+4.  Enable free GPU acceleration. *Runtime → Change Runtime Type → Select your Hardware Acceleration (T4)*. Useful for any GPU acceleration base applications, e.g. machine learning.
 
-5.  Insert a new *code* cell. Click where you want to insert it and
-    *Ctrl + M + B*
+5.  Insert a new *code* cell. Click where you want to insert it and *Ctrl + M + B*
 
-6.  Observe your current variable states. See Figure
-    [1](#fig:state){reference-type="ref" reference="fig:state"}
+6.  Observe your current variable states. See Figure [1](#fig:state)
 
-![Current state of variables in
-Collab](Pictures/stateOverviews.png){#fig:state width="0.4\\linewidth"}
+![Current state of variables in Collab](Pictures/stateOverviews.png)
 
 # Git and GitHub {#sect:git}
 
@@ -88,21 +80,19 @@ to which also present states of the codebase can also be reverted to.
 Finally, once you are ready to publish your changes, you *push* them to
 the remote repository.
 
-![Overview of Git structure](Pictures/git.png){#fig:enter-label
-width="0.5\\linewidth"}
+![Overview of Git structure](Pictures/git.png)
 
 Git is a very powerful and complex tool with many advanced features,
 although as an individual developer or a collaborator within a small
 group (e.g. university project group), about 95% of your time you will
 end up using just a small subset of its features. Although the best way
 to learn Git is by using it, it could be beneficial for you to read-up
-on the commands in Figure [3](#fig:gitCheatSheet){reference-type="ref"
-reference="fig:gitCheatSheet"}. Otherwise, feel free to look up any
+on the commands in Figure [3](#fig:gitCheatSheet). 
+Otherwise, feel free to look up any
 other cheat sheets just by Google searching for them!
 
 ![source
-https://medium.com/@myitcerts995/git-cheat-sheet-guys-f26e2d96732c](Pictures/gitCheatSheet.png){#fig:gitCheatSheet
-width="0.5\\linewidth"}
+https://medium.com/@myitcerts995/git-cheat-sheet-guys-f26e2d96732c](Pictures/gitCheatSheet.png)
 
 ## Using SSH keys within Git
 
@@ -131,13 +121,12 @@ folder and click *Git Bash here*.
 
 1.  Open GitHub website on your browser and click the *New* button to
     create a new repository, see Figure
-    [4](#fig:gitRepo){reference-type="ref" reference="fig:gitRepo"}.
+    [4](#fig:gitRepo)
 
 2.  Go through the steps of creating a new repository. The important
     part is to add a relevant *.gitignore* template and decide if you
     want the repository *public* or *private*, the rest is up to you.
-    See Figure [5](#fig:gitRepoSettings){reference-type="ref"
-    reference="fig:gitRepoSettings"}.
+    See Figure [5](#fig:gitRepoSettings)
 
 3.  Your browser should automatically navigate you to your new
     repository. Click the green *Code* button and copy the link from the
@@ -148,11 +137,8 @@ folder and click *Git Bash here*.
 
 5.  This now should download the repository on your computers. Take the
     *HelloSPIS.ipynb* file from the Section
-    [2](#sect:gcollab){reference-type="ref" reference="sect:gcollab"}
-    and copy it in the newly created directory. *Note:* You can navigate
-    the terminal environment with *cd myAwesomeRepo* to enter your
-    repository (or any other folder), use *ls* to view the contents, use
-    *cd ..* to go one folder up.
+    [2](#sect:gcollab) and copy it in the newly created directory.
+	*Note:* You can navigate the terminal environment with *cd myAwesomeRepo* to enter your repository (or any other folder), use *ls* to view the contents, use *cd ..* to go one folder up.
 
 6.  Issue *cd myAwesomeRepo* to enter the repository in the terminal
     environment and issues *git status*. You should see that you have an
@@ -177,14 +163,11 @@ folder and click *Git Bash here*.
 10. Optional: Make a code edit to the file and repeat through steps 6-9,
     you can also use *git diff* to see your performed changes.
 
-![Git new repo](Pictures/gitRepo.png){#fig:gitRepo
-width="0.5\\linewidth"}
+![Git new repo](Pictures/gitRepo.png)
 
-![Example settings of a new git
-repo](Pictures/gitRepoSettings.png){#fig:gitRepoSettings
-width="0.5\\linewidth"}
+![Example settings of a new git repo](Pictures/gitRepoSettings.png)
 
-## Git Development Branches {#subsect:gitDevBranch}
+## Git Development Branches
 
 One of the most common features used during development is *branching*.
 This essentially means that you divert your future *commits* to a
@@ -209,16 +192,13 @@ tested or developed. Let's take a look at this feature!
 
 3.  Take a look at your repository on GitHub website. You can expand the
     branch dropdown and should see your newly created branch there. See
-    Figure [6](#fig:gitBranch){reference-type="ref"
-    reference="fig:gitBranch"}.
+    Figure [6](#fig:gitBranch).
 
-![Git branch dropdown menu](Pictures/gitBranch.png){#fig:gitBranch
-width="0.5\\linewidth"}
+![Git branch dropdown menu](Pictures/gitBranch.png)
 
 # Google Collab and Git
 
-In Section [2](#sect:gcollab){reference-type="ref"
-reference="sect:gcollab"} we were developing code right within our
+In Section [2](#sect:gcollab) we were developing code right within our
 Google Drive. While it works for quick checks, generally this is an
 awful way of working because you end up with scattered files and a poor
 development history. In this segment, we will read a notebook directly
@@ -227,11 +207,10 @@ from a Git repository and save changes back into Git.
 1.  Navigate back to Google Collab and hit *File → Open Notebook →
     GitHub Tab*. Enter your Git username, depending on if you made your
     repository *private* during Section
-    [3](#sect:git){reference-type="ref" reference="sect:git"}, you need
+    [3](#sect:git), you need
     to enable *private repositories* and a pop-up should appear for
     authentication. See Figure
-    [7](#fig:gitInCollab){reference-type="ref"
-    reference="fig:gitInCollab"}
+    [7](#fig:gitInCollab)
 
 2.  You should see your Notebook file become available. Make sure to
     select the correct branch and open the file.
@@ -241,11 +220,9 @@ from a Git repository and save changes back into Git.
 
 4.  Navigate to *File → Save as Copy to GitHub*, select the
     ***median_computation* branch** that was created in Section
-    [3.4](#subsect:gitDevBranch){reference-type="ref"
-    reference="subsect:gitDevBranch"}, enter a relevant commit message
+    [3.4](#subsect:gitDevBranch), enter a relevant commit message
     and hit OK! See Figure
-    [8](#fig:gitInCollab_commit){reference-type="ref"
-    reference="fig:gitInCollab_commit"}
+    [8](#fig:gitInCollab_commit).
 
 5.  Open up GitHub website and notice that a new change has been added
     to the file! Note: make sure you're viewing the correct branch.
@@ -255,12 +232,10 @@ from a Git repository and save changes back into Git.
     changes from the GitHub website. Congrats!!
 
 ![Opening a GitHub repo in
-Collab](Pictures/gitInCollab.png){#fig:gitInCollab
-width="0.75\\linewidth"}
+Collab](Pictures/gitInCollab.png)
 
 ![Commit from
-Collab](Pictures/gitInCollab_Commit.png){#fig:gitInCollab_commit
-width="0.75\\linewidth"}
+Collab](Pictures/gitInCollab_Commit.png)
 
 # Python, VSCode and Virtual Environments
 
@@ -308,17 +283,9 @@ things with *miniconda*.
 
 ### Conda Base
 
-You can activate Conda by typing *conda activate*. Your terminal should
-afterward contain the *base*, see Figure
-[9](#fig:condaAct){reference-type="ref" reference="fig:condaAct"}.
-*Base* is your parent environment from which all further environments
-will be *branched* off from. **Do not install packages in your base
-environment!** Base environment should be kept clean and minimal because
-your development environments will be based off it, there are very rare
-cases when you should install packages in your base environment, one of
-which is covered in the next section.
+You can activate Conda by typing *conda activate*. Your terminal should afterward contain the *base*, see Figure [9](#fig:condaAct). *Base* is your parent environment from which all further environments will be *branched* off from. **Do not install packages in your base environment!** Base environment should be kept clean and minimal because your development environments will be based off it, there are very rare cases when you should install packages in your base environment, one of which is covered in the next section.
 
-![Conda activation](condaBase.png){#fig:condaAct width="0.5\\linewidth"}
+![Conda activation](condaBase.png)
 
 ### Mamba
 
@@ -346,8 +313,7 @@ to use the C++ acceleration.
 
 2.  Activate the environment with *mamba activate helloSpis*. The *base*
     should now change to your environment name, see Figure
-    [10](#fig:condaActEnv){reference-type="ref"
-    reference="fig:condaActEnv"}.
+    [10](#fig:condaActEnv).
 
 3.  Activate your Python interpreter via Conda by typing *python3* (or
     *python* on Windows). You should see **Python version 3.10**.
@@ -355,9 +321,7 @@ to use the C++ acceleration.
 4.  Import Numpy as a validation step. Type *import numpy*. If you see
     an error, then you've made a mistake in one of the steps above.
 
-![Activating a Conda
-environment](condaActHellospis.png){#fig:condaActEnv
-width="0.75\\linewidth"}
+![Activating a Conda environment](condaActHellospis.png)
 
 **Optional:** Here are steps for creating an environment from scratch.
 
@@ -389,19 +353,15 @@ favorite Jupyter Notebook *helloSpis.ipynb*.
     fine!
 
 2.  Open up VSCode and navigate to *Extensions* tab. See Figure
-    [11](#fig:vsCodeExtn){reference-type="ref"
-    reference="fig:vsCodeExtn"}.
+    [11](#fig:vsCodeExtn).
 
 3.  Install the following extensions: *Python, Python Debugger, Jupyter*
 
 4.  Open the *HelloSPIS.ipynb* notebook and comment-out the *pip*
     package installation command from the first cell, and select your
     *helloSpis* Conda environment (see top-right corner of Figure
-    [12](#fig:jupyterInVscode){reference-type="ref"
-    reference="fig:jupyterInVscode"}). The notebook should look similar
-    as in Figure [12](#fig:jupyterInVscode){reference-type="ref"
-    reference="fig:jupyterInVscode"}. If your virtual environment does
-    not automatically show up there.
+    [12](#fig:jupyterInVscode)). The notebook should look similar
+    as in Figure [12](#fig:jupyterInVscode)}. 
 
 5.  Execute the notebook by pressing *Run All*. Additionally, you can
     execute also cell-by-cell with *Shift+Enter*.
@@ -422,12 +382,10 @@ these steps to point to it manually.
 4.  Select it and try rerunning the code. If this does not work, use
     Google to troubleshoot.
 
-![VS Code extension tab](Pictures/vsCodeExtension.png){#fig:vsCodeExtn
-width="0.5\\linewidth"}
+![VS Code extension tab](Pictures/vsCodeExtension.png)
 
 ![HelloSPIS notebook in Jupyter with correct virtual environment
-set](notebookInvsCode.png){#fig:jupyterInVscode width="0.99\\linewidth"}
-
+set](notebookInvsCode.png)
 ## Optional: GitHub Copilot
 
 Github copilot is an aid for programmers that provides you with code
