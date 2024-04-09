@@ -9,3 +9,5 @@ chapters:
   sections:
   - file: 02-Compute/HelloSPIS.ipynb
 - file: 03-Fourier-Transform/SPIS03.ipynb
+- file: 04-Spectral-Chromogram-Motiongram/MusicalGesturesToolbox.ipynb
+- file: 05-FAST-NLS-F0/05-Exercises.ipynb
