@@ -11,11 +11,9 @@
 ### 1.1 AIVA
 
 - Main: https://aiva.ai/
-- Release discord: https://discord.com/channels/595651381860368384/596767903215255572
-- Tutorial list @ YouTube
-  https://www.youtube.com/watch?v=SR-UWkSTmAQ&list=PLv7BOfa4CxsHp4uDdsmZgpdclrwkdMpOe
+  - [Release discord](https://discord.com/channels/595651381860368384/596767903215255572). [Tutorial list @ YouTube](https://www.youtube.com/watch?v=SR-UWkSTmAQ&list=PLv7BOfa4CxsHp4uDdsmZgpdclrwkdMpOe)
 
-#### 1.1.1 TODO
+#### 1.1.1 TODO AIVA
 
 - Check Terms and Conditions and create an account
 - Generate 3 versions of a compositions on the web interface
@@ -73,11 +71,11 @@ See [08-Workshop/ML_for_Audio.ipynb](./ML_for_Audio.ipynb)
 
 # Part 3 (Projects)
 
-### 3.1 Project initiation and work (1h)
+### 3.1 Project initiation and work
 
-We use ./04-MusicalGestures for
+MED8 can use ./04-MusicalGestures for TODO New release
 
-SMC can integrate 🔥 **Neutone**: https://neutone.space/ in their workflow: create a short musical piece. Ensure to use demucs for source seperation and several generative models together. Be *mindful* [about the resources](https://github.com/QosmoInc/neutone_sdk/pull/48) (sampling rate, buffer size, Real-time factor, latency etc): In most cases you'll be able to run max three instances even on a high-end computer.
+SMC8 can integrate 🔥 **Neutone**: https://neutone.space/ in their workflow: create a short musical piece. Ensure to use demucs for source seperation and several generative models together. Be *mindful* [about the resources](https://github.com/QosmoInc/neutone_sdk/pull/48) (sampling rate, buffer size, Real-time factor, latency etc): In most cases you'll be able to run max three instances even on a high-end computer.
 
 MED Track: Integrating Sensor Data and Processing ... TBD
 
@@ -87,17 +85,7 @@ Critical listening and discussion. The final pieces will be linked here.
 
 #### Gianluca Eila links
 
-Harmonai, Dance Diffusion
-https://www.youtube.com/watch?v=KmB8z2CYjZY
-
-Harmonai
-https://www.harmonai.org/
-
-Dadabots keynote
-https://www.youtube.com/watch?v=70PjXAOmQIs
-
-Moises horta hexorcismos
-https://moiseshorta.audio/
-
-Nice exhibition by ai ethics researcher mirabelle jones, open until aug 27
-https://facebook.com/events/s/overs%C3%A6ttelse-af-traumer-transl/2253077421542112/
+* Harmonai, Dance Diffusion: https://www.youtube.com/watch?v=KmB8z2CYjZY
+* Harmonai: https://www.harmonai.org/
+* Dadabots keynote https://www.youtube.com/watch?v=70PjXAOmQIs
+* Moises horta hexorcismos https://moiseshorta.audio/
