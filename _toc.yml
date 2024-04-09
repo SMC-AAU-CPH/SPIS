@@ -1,0 +1,11 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: README.md
+chapters:
+- file: 01-Intro-librosa/librosa-101.ipynb
+- file: 02-Compute/handout.md
+  sections:
+  - file: 02-Compute/HelloSPIS.ipynb
+- file: 03-Fourier-Transform/SPIS03.ipynb
