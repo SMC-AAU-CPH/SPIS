@@ -1,4 +1,4 @@
-# Introduction
+# Introduction: Programming tools and environmets
 
 This handout is intended to help you navigate and kick-off your Python
 development journey by using modern workflows. It is oriented towards
@@ -7,16 +7,12 @@ refresher!
 
 ## List of learning outcomes
 
-1.  Familiarization with Google Collab 
-
-2.  Learning basics of Git (most popular commands) and understanding the
-    core workflow (local-remote repository)
-
-3.  Using Google Collab with Git
-
-4.  Modern Python development workflows (virtual environments)
-
-5.  Development tools (VSCode, GitHub Copilot)
+1. Familiarization with Google Collab
+2. Learning basics of Git (most popular commands) and understanding the
+   core workflow (local-remote repository)
+3. Using Google Collab with Git
+4. Modern Python development workflows (virtual environments)
+5. Development tools (VSCode, GitHub Copilot)
 
 # Google Collab
 
@@ -35,21 +31,16 @@ writing this handout, the code is executed with Python 3.10.
 
 Open the attached *HelloSPIS.ipynb* notebook in Collab and go through the following steps.
 
-1.  Open Collab and upload the notebook. *File → Open Notebook → Upload*.
-
-2.  Execute each cell with *Ctrl + Shift*
-
-3.  Execute all cells *Runtime → Run All (Ctrl + F9)*
-
-4.  Enable free GPU acceleration. *Runtime → Change Runtime Type → Select your Hardware Acceleration (T4)*. Useful for any GPU acceleration base applications, e.g. machine learning.
-
-5.  Insert a new *code* cell. Click where you want to insert it and *Ctrl + M + B*
-
-6.  Observe your current variable states. See Figure [1](#fig:state)
+1. Open Collab and upload the notebook. *File → Open Notebook → Upload*.
+2. Execute each cell with *Ctrl + Shift*
+3. Execute all cells *Runtime → Run All (Ctrl + F9)*
+4. Enable free GPU acceleration. *Runtime → Change Runtime Type → Select your Hardware Acceleration (T4)*. Useful for any GPU acceleration base applications, e.g. machine learning.
+5. Insert a new *code* cell. Click where you want to insert it and *Ctrl + M + B*
+6. Observe your current variable states. See Figure [1](#fig:state)
 
 ![Current state of variables in Collab](Pictures/stateOverviews.png)
 
-# Git and GitHub {#sect:git}
+# Git and GitHub
 
 **Git** is a code version control system developed by Linus Torvalds
 (maker of Linux kernel). It essentially allows you to manage your code
@@ -87,7 +78,7 @@ although as an individual developer or a collaborator within a small
 group (e.g. university project group), about 95% of your time you will
 end up using just a small subset of its features. Although the best way
 to learn Git is by using it, it could be beneficial for you to read-up
-on the commands in Figure [3](#fig:gitCheatSheet). 
+on the commands in Figure [3](#fig:gitCheatSheet).
 Otherwise, feel free to look up any
 other cheat sheets just by Google searching for them!
 
@@ -119,47 +110,38 @@ installation, on Mac and Linux, you should have Git added to your
 standard terminal. On Windows you would need to *Right-Click*[^8] in a
 folder and click *Git Bash here*.
 
-1.  Open GitHub website on your browser and click the *New* button to
-    create a new repository, see Figure
-    [4](#fig:gitRepo)
-
-2.  Go through the steps of creating a new repository. The important
-    part is to add a relevant *.gitignore* template and decide if you
-    want the repository *public* or *private*, the rest is up to you.
-    See Figure [5](#fig:gitRepoSettings)
-
-3.  Your browser should automatically navigate you to your new
-    repository. Click the green *Code* button and copy the link from the
-    SSH tab.
-
-4.  Navigate to your Git terminal and issues *'git clone YOUR_LINK'*
-    command
-
-5.  This now should download the repository on your computers. Take the
-    *HelloSPIS.ipynb* file from the Section
-    [2](#sect:gcollab) and copy it in the newly created directory.
-	*Note:* You can navigate the terminal environment with *cd myAwesomeRepo* to enter your repository (or any other folder), use *ls* to view the contents, use *cd ..* to go one folder up.
-
-6.  Issue *cd myAwesomeRepo* to enter the repository in the terminal
-    environment and issues *git status*. You should see that you have an
-    *untracked file*. This means that this file is completely new to
-    your repository.
-
-7.  Add your file to *staging*. Issue the command *git add
-    HelloSPIS.ipynb*. Note: to speed up your work, you can press *TAB*
-    key to autocomplete partially written file names, i.e. *git add
-    Hel* + TAB should autocomplete the file name. This works only if the
-    file name can be resolved to a single file.
-
-8.  Make a *commit* to your *local* repository. Issue the command *git
-    commit -m \"add helloSPIS\"*. It is good practice to use short and
-    explicit messages, this will be useful if you ever need to review
-    the history!
-
-9.  Now *push* your file to GitHub. Issue the command *git push*, you
-    may be prompted for a password. Once this is complete, go back to
-    GitHub and notice how your file is added to the remote server!
-
+1. Open GitHub website on your browser and click the *New* button to
+   create a new repository, see Figure
+   [4](#fig:gitRepo)
+2. Go through the steps of creating a new repository. The important
+   part is to add a relevant *.gitignore* template and decide if you
+   want the repository *public* or *private*, the rest is up to you.
+   See Figure [5](#fig:gitRepoSettings)
+3. Your browser should automatically navigate you to your new
+   repository. Click the green *Code* button and copy the link from the
+   SSH tab.
+4. Navigate to your Git terminal and issues *'git clone YOUR_LINK'*
+   command
+5. This now should download the repository on your computers. Take the
+   *HelloSPIS.ipynb* file from the Section
+   [2](#sect:gcollab) and copy it in the newly created directory.
+   *Note:* You can navigate the terminal environment with *cd myAwesomeRepo* to enter your repository (or any other folder), use *ls* to view the contents, use *cd ..* to go one folder up.
+6. Issue *cd myAwesomeRepo* to enter the repository in the terminal
+   environment and issues *git status*. You should see that you have an
+   *untracked file*. This means that this file is completely new to
+   your repository.
+7. Add your file to *staging*. Issue the command *git add
+   HelloSPIS.ipynb*. Note: to speed up your work, you can press *TAB*
+   key to autocomplete partially written file names, i.e. *git add
+   Hel* + TAB should autocomplete the file name. This works only if the
+   file name can be resolved to a single file.
+8. Make a *commit* to your *local* repository. Issue the command *git
+   commit -m \"add helloSPIS\"*. It is good practice to use short and
+   explicit messages, this will be useful if you ever need to review
+   the history!
+9. Now *push* your file to GitHub. Issue the command *git push*, you
+   may be prompted for a password. Once this is complete, go back to
+   GitHub and notice how your file is added to the remote server!
 10. Optional: Make a code edit to the file and repeat through steps 6-9,
     you can also use *git diff* to see your performed changes.
 
@@ -178,21 +160,19 @@ because you do not want to potentially break or pollute your most
 recent, working codebase with experimental code that may not be fully
 tested or developed. Let's take a look at this feature!
 
-1.  Open your Git terminal and issue *git checkout -b
-    \"median_computation\"*. In the next section, you will add a simple
-    one line of code for computing the median.
-
-2.  Issue the command *git push --set-upstream origin
-    median_computation*. This will do two things at once, push the newly
-    created branch to the remote repository and set it as an upstream
-    branch, meaning that all future commits will be pushed to it. Note:
-    You can use *git branch*, *git branch --remote* and *git checkout
-    BRANCH_NAME* to view local, remote branches and switch to a new
-    branch.
-
-3.  Take a look at your repository on GitHub website. You can expand the
-    branch dropdown and should see your newly created branch there. See
-    Figure [6](#fig:gitBranch).
+1. Open your Git terminal and issue *git checkout -b
+   \"median_computation\"*. In the next section, you will add a simple
+   one line of code for computing the median.
+2. Issue the command *git push --set-upstream origin
+   median_computation*. This will do two things at once, push the newly
+   created branch to the remote repository and set it as an upstream
+   branch, meaning that all future commits will be pushed to it. Note:
+   You can use *git branch*, *git branch --remote* and *git checkout
+   BRANCH_NAME* to view local, remote branches and switch to a new
+   branch.
+3. Take a look at your repository on GitHub website. You can expand the
+   branch dropdown and should see your newly created branch there. See
+   Figure [6](#fig:gitBranch).
 
 ![Git branch dropdown menu](Pictures/gitBranch.png)
 
@@ -204,32 +184,27 @@ awful way of working because you end up with scattered files and a poor
 development history. In this segment, we will read a notebook directly
 from a Git repository and save changes back into Git.
 
-1.  Navigate back to Google Collab and hit *File → Open Notebook →
-    GitHub Tab*. Enter your Git username, depending on if you made your
-    repository *private* during Section
-    [3](#sect:git), you need
-    to enable *private repositories* and a pop-up should appear for
-    authentication. See Figure
-    [7](#fig:gitInCollab)
-
-2.  You should see your Notebook file become available. Make sure to
-    select the correct branch and open the file.
-
-3.  Make a change to the codebase, e.g. compute the median with
-    *np.median()* function and print out the value.
-
-4.  Navigate to *File → Save as Copy to GitHub*, select the
-    ***median_computation* branch** that was created in Section
-    [3.4](#subsect:gitDevBranch), enter a relevant commit message
-    and hit OK! See Figure
-    [8](#fig:gitInCollab_commit).
-
-5.  Open up GitHub website and notice that a new change has been added
-    to the file! Note: make sure you're viewing the correct branch.
-
-6.  *Many Bonus Points:* Navigate back to your repository within your
-    Git terminal and issue *git pull* command to pull now the latest
-    changes from the GitHub website. Congrats!!
+1. Navigate back to Google Collab and hit *File → Open Notebook →
+   GitHub Tab*. Enter your Git username, depending on if you made your
+   repository *private* during Section
+   [3](#sect:git), you need
+   to enable *private repositories* and a pop-up should appear for
+   authentication. See Figure
+   [7](#fig:gitInCollab)
+2. You should see your Notebook file become available. Make sure to
+   select the correct branch and open the file.
+3. Make a change to the codebase, e.g. compute the median with
+   *np.median()* function and print out the value.
+4. Navigate to *File → Save as Copy to GitHub*, select the
+   ***median_computation* branch** that was created in Section
+   [3.4](#subsect:gitDevBranch), enter a relevant commit message
+   and hit OK! See Figure
+   [8](#fig:gitInCollab_commit).
+5. Open up GitHub website and notice that a new change has been added
+   to the file! Note: make sure you're viewing the correct branch.
+6. *Many Bonus Points:* Navigate back to your repository within your
+   Git terminal and issue *git pull* command to pull now the latest
+   changes from the GitHub website. Congrats!!
 
 ![Opening a GitHub repo in
 Collab](Pictures/gitInCollab.png)
@@ -307,37 +282,31 @@ development environment. For any further commands, consult online cheat
 sheets[^12]! Remember that you can replace *conda* prefix with *mamba*
 to use the C++ acceleration.
 
-1.  Use the command *mamba env create -f environment.yml*. Note that you
-    need to navigate to the folder that contains your *environment.yml*
-    file. Use *cd* and *ls* (*dir* for Windows) commands to your help!
-
-2.  Activate the environment with *mamba activate helloSpis*. The *base*
-    should now change to your environment name, see Figure
-    [10](#fig:condaActEnv).
-
-3.  Activate your Python interpreter via Conda by typing *python3* (or
-    *python* on Windows). You should see **Python version 3.10**.
-
-4.  Import Numpy as a validation step. Type *import numpy*. If you see
-    an error, then you've made a mistake in one of the steps above.
+1. Use the command *mamba env create -f environment.yml*. Note that you
+   need to navigate to the folder that contains your *environment.yml*
+   file. Use *cd* and *ls* (*dir* for Windows) commands to your help!
+2. Activate the environment with *mamba activate helloSpis*. The *base*
+   should now change to your environment name, see Figure
+   [10](#fig:condaActEnv).
+3. Activate your Python interpreter via Conda by typing *python3* (or
+   *python* on Windows). You should see **Python version 3.10**.
+4. Import Numpy as a validation step. Type *import numpy*. If you see
+   an error, then you've made a mistake in one of the steps above.
 
 ![Activating a Conda environment](condaActHellospis.png)
 
 **Optional:** Here are steps for creating an environment from scratch.
 
-1.  Ensure you have **base** environment activated! Type *mamba
-    deactivate* to exit your development environment
-
-2.  Create an environment with *mamba create --name myEnvironment
-    python=3.10*. *Note*: The Python version specification is optional,
-    you can leave that out to use the latest Python or change it to a
-    different version.
-
-3.  Activate your environment *mamba activate myEnvironment*
-
-4.  Install any packages you'd like. Try searching and installing Numpy
-    from here https://anaconda.org/ the installation command will be
-    accompanied in the package page.
+1. Ensure you have **base** environment activated! Type *mamba
+   deactivate* to exit your development environment
+2. Create an environment with *mamba create --name myEnvironment
+   python=3.10*. *Note*: The Python version specification is optional,
+   you can leave that out to use the latest Python or change it to a
+   different version.
+3. Activate your environment *mamba activate myEnvironment*
+4. Install any packages you'd like. Try searching and installing Numpy
+   from here https://anaconda.org/ the installation command will be
+   accompanied in the package page.
 
 ## Python Development and VSCode
 
@@ -349,43 +318,37 @@ and integrations of useful development plugins. In this section we will
 link up your Python virtual environment with VSCode and execute your
 favorite Jupyter Notebook *helloSpis.ipynb*.
 
-1.  Download and install VSCode [^13]. Default settings will work just
-    fine!
-
-2.  Open up VSCode and navigate to *Extensions* tab. See Figure
-    [11](#fig:vsCodeExtn).
-
-3.  Install the following extensions: *Python, Python Debugger, Jupyter*
-
-4.  Open the *HelloSPIS.ipynb* notebook and comment-out the *pip*
-    package installation command from the first cell, and select your
-    *helloSpis* Conda environment (see top-right corner of Figure
-    [12](#fig:jupyterInVscode)). The notebook should look similar
-    as in Figure [12](#fig:jupyterInVscode)}. 
-
-5.  Execute the notebook by pressing *Run All*. Additionally, you can
-    execute also cell-by-cell with *Shift+Enter*.
+1. Download and install VSCode [^13]. Default settings will work just
+   fine!
+2. Open up VSCode and navigate to *Extensions* tab. See Figure
+   [11](#fig:vsCodeExtn).
+3. Install the following extensions: *Python, Python Debugger, Jupyter*
+4. Open the *HelloSPIS.ipynb* notebook and comment-out the *pip*
+   package installation command from the first cell, and select your
+   *helloSpis* Conda environment (see top-right corner of Figure
+   [12](#fig:jupyterInVscode)). The notebook should look similar
+   as in Figure [12](#fig:jupyterInVscode)}.
+5. Execute the notebook by pressing *Run All*. Additionally, you can
+   execute also cell-by-cell with *Shift+Enter*.
 
 Does your virtual environment not automatically show-up in VS-Code? Try
 these steps to point to it manually.
 
-1.  Open your command-pallette (Ctrl + shift + P) and locate *Python:
-    select interpreter*.
-
-2.  Locate your virtual environment, Python3 binary. On Unix (Mac/Linux)
-    it should be in
-    */home/USER_NAME/miniconda3/envs/helloSpis/bin/python3*
-
-3.  On Windows
-    *C:/Users/username/Miniconda3/envs/helloSpis/bin/python.exe*
-
-4.  Select it and try rerunning the code. If this does not work, use
-    Google to troubleshoot.
+1. Open your command-pallette (Ctrl + shift + P) and locate *Python:
+   select interpreter*.
+2. Locate your virtual environment, Python3 binary. On Unix (Mac/Linux)
+   it should be in
+   */home/USER_NAME/miniconda3/envs/helloSpis/bin/python3*
+3. On Windows
+   *C:/Users/username/Miniconda3/envs/helloSpis/bin/python.exe*
+4. Select it and try rerunning the code. If this does not work, use
+   Google to troubleshoot.
 
 ![VS Code extension tab](Pictures/vsCodeExtension.png)
 
 ![HelloSPIS notebook in Jupyter with correct virtual environment
 set](notebookInvsCode.png)
+
 ## Optional: GitHub Copilot
 
 Github copilot is an aid for programmers that provides you with code
@@ -402,31 +365,31 @@ need to install the Copilot extension.
 Happy coding! :-)
 
 [^1]: https://colab.research.google.com/
-
+    
 [^2]: Some of you may know this workflow format as \"Jupyter Notebook\"
-
+    
 [^3]: Meaning that code is structured into chunks and executed
-    chunk-by-chunk
-
+       chunk-by-chunk
+    
 [^4]: https://git-scm.com/
-
+    
 [^5]: https://github.com/
-
+    
 [^6]: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=windows
-
+    
 [^7]: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
-
+    
 [^8]: On Windows 11 you may need to expand further to *Show More
-    Options*
-
+       Options*
+    
 [^9]: https://docs.anaconda.com/free/miniconda/
-
+    
 [^10]: https://saturncloud.io/blog/solving-the-conda-command-not-found-issue-after-installing-anaconda3/
-
+    
 [^11]: https://anaconda.org/conda-forge/mamba
-
+    
 [^12]: https://docs.conda.io/projects/conda/en/4.6.0/\_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf
-
+    
 [^13]: https://code.visualstudio.com/
-
+    
 [^14]: https://github.com/features/copilot

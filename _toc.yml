@@ -4,7 +4,27 @@
 format: jb-book
 root: README.md
 parts:
-- caption: Compute
-  chapters:
-  - file: 02-Compute/handout.md
-
+  - caption: Compute
+    chapters:
+    - file: 02-Compute/handout.md
+    - file: 02-Compute/HelloSPIS.ipynb
+  - caption: librosa
+    chapters:
+    - file: 01-Intro-librosa/librosa-101.ipynb
+    - url: https://librosa.org/doc/latest/advanced.html
+      title: Librosa Advanced Examples
+  - caption: Theory and Practice
+    chapters:
+    - file: 03-Fourier-Transform/SPIS03.ipynb
+    - file: 04-Spectral-Chromogram-Motiongram/MusicalGesturesToolbox.ipynb
+      sections:
+      - file: 04-Spectral-Chromogram-Motiongram/Exercise-4.md
+    - file: 05-FAST-NLS-F0/05-Exercises.ipynb
+  - caption: torch
+    chapters:
+    - file: 07-Torch/README.md
+    - file: 08-Workshop/README.md
+      sections:
+      - file: 08-Workshop/ML_for_Audio.ipynb
+      - file: 08-Workshop/LPC/README.ipynb
+      - file: A1-Torch/TorchLossViz.ipynb

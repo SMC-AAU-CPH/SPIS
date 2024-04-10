@@ -1,4 +1,6 @@
-# SPIS-Workshop-25 on 9.4 12:30 onwards
+# SPIS-Workshop: Differentiable Digital Signal Processing
+
+After https://intro2ddsp.github.io
 
 ## Part 1: Parametric Methos (with LPC as an example)
 
