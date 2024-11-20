@@ -1,9 +1,9 @@
 Signal Processing for Interactive Systems
 ================
 
-Cumhur Erkut, Anders Bargum, and Ernests Lavrinovits.
+Cumhur Erkut, Anders Bargum, and Mubarik Jamal Muuse
 
-With previous material from Jesper R Jensen and Jesper K Nielsen.
+With previous material from Jesper R Jensen, Ernests Lavrinovits, and Jesper K Nielsen.
 
 A graduate course in Aalborg University Medialogy and Sound & Music Computing programs.
 
@@ -21,22 +21,16 @@ This course introduces signal processing theory and methods for analyzing and pr
    Methods like Maximum Likelihood Estimation (MLE) or Least Squares Estimation (LSE) come into play here.
 4. **Signal Enhancement**: Enhancing signals involves improving their quality by reducing noise, sharpening edges, or enhancing specific features. Adaptive filters, wavelet denoising, and Wiener filtering are commonly used techniques.
 
-# CONTENT (as run in 2024 course)
+# CONTENT 
 
+* [./00-Course-intro](00-Course-intro/)
 * [./01-Intro-librosa](./01-Intro-librosa/)
 * [./02-Compute](./02-Compute/)
 * [./03-Fourier-Transform](./03-Fourier-Transform/)
 * [./04-Spectral-Chromogram-Motiongram](./04-Spectral-Chromogram-Motiongram/)
-* [./05-FAST-NLS-F0](./05-FAST-NLS-F0/)
+* [./05-FAST-NLS-F0](./05-FAST-NLS-F0/) ➡️ Image & Custom Blocks
 * [./06-Pitch-Basics](./06-Pitch-Basics/)
 * [./07-Torch](./07-Torch/)
 * [./08-Workshop](./08-Workshop/)
 * [./Appendix-1: More Torch](./A1-More%20Torch/)
-* fastF0Nls   After [&amp;Nielsen-2017](&Nielsen-2017), contains
-  * cpp, matlab, and python implementations
-    * cpp compiled for linux and mac m1
-    * TODO compile fastF0Nls for windows and mac intel.
 
-# References
-
-Nielsen, Jesper Kjær, Jensen, Tobias Lindström, Jensen, J. R., Christensen, Mads Græsbøll, & Jensen, Søren Holdt (2017). Fast fundamental frequency estimation: making a statistically efficient estimator computationally efficient. Signal Processing, 135(), 188–197. [http://dx.doi.org/10.1016/j.sigpro.2017.01.011](http://dx.doi.org/10.1016/j.sigpro.2017.01.011)
