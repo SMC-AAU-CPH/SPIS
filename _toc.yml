@@ -4,6 +4,9 @@
 format: jb-book
 root: README.md
 parts:
+  - caption: Introduction
+    chapters:
+    - file: 00-Course-intro/README.md
   - caption: Compute
     chapters:
     - file: 02-Compute/handout.md
