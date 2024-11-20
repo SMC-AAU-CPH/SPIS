@@ -23,7 +23,7 @@ This course introduces signal processing theory and methods for analyzing and pr
 
 # CONTENT 
 
-* [00-Course-intro](../00-Course-intro/README.md)
+* {doc}`00-Course-intro <../00-Course-intro/README.md>`
 * [/01-Intro-librosa](../01-Intro-librosa/librosa-101.ipynb)
 * [./02-Compute](./02-Compute/)
 * [./03-Fourier-Transform](./03-Fourier-Transform/)
