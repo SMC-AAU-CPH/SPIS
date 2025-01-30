@@ -18,7 +18,7 @@ On [Edge Impulse this is done through processing blocks](https://docs.edgeimpuls
 * [IMU Syntiant](https://docs.edgeimpulse.com/docs/edge-impulse-studio/processing-blocks/imu-syntiant)
 * [HR/HRV features](https://docs.edgeimpulse.com/docs/edge-impulse-studio/processing-blocks/hr-hrv-features)
 
-The source code of these blocks are available in the [Edge Impulse processing blocks GitHub repository](https://github.com/edgeimpulse/processing-blocks).
+The source code of these blocks is available in the [Edge Impulse processing blocks GitHub repository](https://github.com/edgeimpulse/processing-blocks).
 
 # Custom processing blocks
 
