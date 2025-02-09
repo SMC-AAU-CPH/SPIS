@@ -21,11 +21,20 @@ This course introduces signal processing theory and methods for analyzing and pr
    Methods like Maximum Likelihood Estimation (MLE) or Least Squares Estimation (LSE) come into play here.
 4. **Signal Enhancement**: Enhancing signals involves improving their quality by reducing noise, sharpening edges, or enhancing specific features. Adaptive filters, wavelet denoising, and Wiener filtering are commonly used techniques.
 
+# APROACH
+
+Time-frequency signal analysis/synthesis suitable for machine / deep learning tasks.
+
+![Time-frequency relations](TF.png)
+
+Mathematical theory: postponed to PhD level:
+- https://www.numerical-tours.com
+- https://mathematical-tours.github.io
+
+
 # CONTENT
 
-* [00-Course-intro](https://smc-aau-cph.github.io/SPIS/00-Course-intro/README.html)
-* [/01-Intro-librosa](https://smc-aau-cph.github.io/SPIS/01-Intro-librosa/librosa-101.html)
-* [./02-Compute](https://smc-aau-cph.github.io/SPIS/02-Compute)
+* [00-Course-intro](https://smc-aau-cph.github.io/SPIS/00-Course-intro/README.html), [01-Intro-librosa](https://smc-aau-cph.github.io/SPIS/01-Intro-librosa/librosa-101.html), and [./02-Compute](https://smc-aau-cph.github.io/SPIS/02-Compute)
 * [./03-Fourier-Transform](https://smc-aau-cph.github.io/SPIS/03-Fourier-Transform/SPIS03.html)
 * [./04-Spectral-Chromogram-Motiongram](./04-Spectral-Chromogram-Motiongram/MusicalGesturesToolbox.ipynb)
 * [.~~/05-FAST-NLS-F0~~](./05-FAST-NLS-F0/)➡️ Image & Custom Blocks, Physiological Signals (HRV, EEG)
