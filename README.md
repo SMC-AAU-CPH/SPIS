@@ -36,6 +36,7 @@ Mathematical theory: postponed to PhD level:
 
 * [00-Course-intro](https://smc-aau-cph.github.io/SPIS/00-Course-intro/README.html), [01-Intro-librosa](https://smc-aau-cph.github.io/SPIS/01-Intro-librosa/librosa-101.html), and [./02-Compute](https://smc-aau-cph.github.io/SPIS/02-Compute)
 * [./03-Fourier-Transform](https://smc-aau-cph.github.io/SPIS/03-Fourier-Transform/SPIS03.html)
+* [./03a-Fourier-for-EEG](https://smc-aau-cph.github.io/SPIS/03-Fourier-Transform/03-MED-EEG.html)   
 * [./04-Spectral-Chromogram-Motiongram](./04-Spectral-Chromogram-Motiongram/MusicalGesturesToolbox.ipynb)
 * [.~~/05-FAST-NLS-F0~~](./05-FAST-NLS-F0/)➡️ Image & Custom Blocks, Physiological Signals (HRV, EEG)
 * [./06-Pitch-Basics](./06-Pitch-Basics/SPIS-06-PitchBasics.ipynb)
