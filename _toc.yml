@@ -19,6 +19,7 @@ parts:
   - caption: Theory and Practice
     chapters:
     - file: 03-Fourier-Transform/SPIS03.ipynb
+    - file: 03-Fourier-Transform/03-MED-EEG.ipynb
     - file: 04-Spectral-Chromogram-Motiongram/MusicalGesturesToolbox.ipynb
       sections:
       - file: 04-Spectral-Chromogram-Motiongram/Exercise-4.md
