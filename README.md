@@ -28,18 +28,10 @@ Time-frequency signal analysis/synthesis suitable for machine / deep learning ta
 ![Time-frequency relations](TF.png)
 
 Mathematical theory: postponed to PhD level:
-- https://www.numerical-tours.com
-- https://mathematical-tours.github.io
 
+- [https://www.numerical-tours.com](https://www.numerical-tours.com)
+- [https://mathematical-tours.github.io]()
 
 # CONTENT
 
-* [00-Course-intro](https://smc-aau-cph.github.io/SPIS/00-Course-intro/README.html), [01-Intro-librosa](https://smc-aau-cph.github.io/SPIS/01-Intro-librosa/librosa-101.html), and [./02-Compute](https://smc-aau-cph.github.io/SPIS/02-Compute)
-* [./03-Fourier-Transform](https://smc-aau-cph.github.io/SPIS/03-Fourier-Transform/SPIS03.html)
-* [./03a-Fourier-for-EEG](https://smc-aau-cph.github.io/SPIS/03-Fourier-Transform/03-MED-EEG.html)   
-* [./04-Spectral-Chromogram-Motiongram](./04-Spectral-Chromogram-Motiongram/MusicalGesturesToolbox.ipynb)
-* [.~~/05-FAST-NLS-F0~~](./05-FAST-NLS-F0/)➡️ Image & Custom Blocks, Physiological Signals (HRV, EEG)
-* [./06-Pitch-Basics](./06-Pitch-Basics/SPIS-06-PitchBasics.ipynb)
-* [./07-Torch](https://smc-aau-cph.github.io/SPIS/07-Torch/README.html)
-* [./08-Workshop](https://smc-aau-cph.github.io/SPIS/08-Workshop/README.html)
-* [./Appendix-1: More Torch](./A1-Torch/TorchLossViz.ipynb)
+* Chapter 4 is based on theI ntroduction to Machine Learning Systems (Shared Lab) licensed at [https://github.com/harvard-edge/cs249r_book]() under [Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/) License.

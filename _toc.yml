@@ -20,10 +20,11 @@ parts:
     chapters:
     - file: 03-Fourier-Transform/SPIS03.ipynb
     - file: 03-Fourier-Transform/03-MED-EEG.ipynb
-    - file: 04-Spectral-Chromogram-Motiongram/MusicalGesturesToolbox.ipynb
-      sections:
-      - file: 04-Spectral-Chromogram-Motiongram/Exercise-4.md
-    - file: 05-FAST-NLS-F0/05-Exercises.ipynb
+    - file: 03-Fourier-Transform/03-MED-TonicPhasic.ipynb
+    - file: 04-SharedLab/README.md
+    - file: 04-SharedLab/Audio_Data_Analysis.ipynb
+    - file: 04-SharedLab/Edge_Impulse_Spectral_Analysis_Block_V3.ipynb
+    - file: 05-Spectral-Chromogram-Motiongram/MusicalGesturesToolbox.ipynb
   - caption: torch
     chapters:
     - file: 07-Torch/README.md
