@@ -21,11 +21,13 @@ parts:
     - file: 03-Fourier-Transform/SPIS03.ipynb
     - file: 03-Fourier-Transform/03-MED-EEG.ipynb
     - file: 03-Fourier-Transform/03-MED-TonicPhasic.ipynb
+  - caption: 04-Shared Lab
+    chapters:
     - file: 04-SharedLab/README.md
-    - caption: 04-Shared Lab
-      sections:
-      - file: 04-SharedLab/Audio_Data_Analysis.ipynb
-      - file: 04-SharedLab/Edge_Impulse_Spectral_Analysis_Block_V3.ipynb
+    - file: 04-SharedLab/Audio_Data_Analysis.ipynb
+    - file: 04-SharedLab/Edge_Impulse_Spectral_Analysis_Block_V3.ipynb
+  - caption: 05-Workshop
+    chapters:
     - file: 05-Spectral-Chromogram-Motiongram/MusicalGesturesToolbox.ipynb
   - caption: torch
     chapters:
