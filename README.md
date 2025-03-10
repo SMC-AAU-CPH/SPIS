@@ -34,4 +34,4 @@ Mathematical theory: postponed to PhD level:
 
 # CONTENT
 
-* Chapter 4 is based on theI ntroduction to Machine Learning Systems (Shared Lab) licensed at [https://github.com/harvard-edge/cs249r_book]() under [Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/) License.
+* Chapter 4 is based on "Introduction to Machine Learning Systems" (Shared Lab) licensed at [https://github.com/harvard-edge/cs249r_book]() under [Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/) License.

@@ -1,6 +1,6 @@
-# KWS Feature Engineering 
+# KWS Feature Engineering
 
-![*DALL·E 3 Prompt: 1950s style cartoon scene set in an audio research room. Two scientists, one holding a magnifying glass and the other taking notes, examine large charts pinned to the wall. These charts depict FFT graphs and time curves related to audio data analysis. The room has a retro ambiance, with wooden tables, vintage lamps, and classic audio analysis tools.*](images/jpg/kws_under_the_hood_ini.jpg)
+![DALL·E 3 Prompt: 1950s style cartoon scene set in an audio research room. Two scientists, one holding a magnifying glass and the other taking notes, examine large charts pinned to the wall. These charts depict FFT graphs and time curves related to audio data analysis. The room has a retro ambiance, with wooden tables, vintage lamps, and classic audio analysis tools.](images/jpg/kws_under_the_hood_ini.jpg)
 
 ## Overview
 
@@ -37,7 +37,6 @@ Here a typical KWS Process using MFCC Feature Converter:
 Understanding the basic properties of audio signals is crucial for effective feature extraction and, ultimately, for successfully applying machine learning algorithms in audio classification tasks. Audio signals are complex waveforms that capture fluctuations in air pressure over time. These signals can be characterized by several fundamental attributes: sampling rate, frequency, and amplitude.
 
 - **Frequency and Amplitude:** [Frequency](https://en.wikipedia.org/wiki/Audio_frequency) refers to the number of oscillations a waveform undergoes per unit time and is also measured in Hz. In the context of audio signals, different frequencies correspond to different pitches. [Amplitude](https://en.wikipedia.org/wiki/Amplitude), on the other hand, measures the magnitude of the oscillations and correlates with the loudness of the sound. Both frequency and amplitude are essential features that capture audio signals' tonal and rhythmic qualities.
-
 - **Sampling Rate:** The [sampling rate](https://en.wikipedia.org/wiki/Sampling_(signal_processing)), often denoted in Hertz (Hz), defines the number of samples taken per second when digitizing an analog signal. A higher sampling rate allows for a more accurate digital representation of the signal but also demands more computational resources for processing. Typical sampling rates include 44.1 kHz for CD-quality audio and 16 kHz or 8 kHz for speech recognition tasks. Understanding the trade-offs in selecting an appropriate sampling rate is essential for balancing accuracy and computational efficiency. In general, with TinyML projects, we work with 16KHz. Although music tones can be heard at frequencies up to 20 kHz, voice maxes out at 8 kHz. Traditional telephone systems use an 8 kHz sampling frequency.
 
 > For an accurate representation of the signal, the sampling rate must be at least twice the highest frequency present in the signal.
@@ -57,13 +56,9 @@ Using raw audio data for Keyword Spotting (KWS), for example, on TinyML devices 
 Here are some additional details of the critical issues associated with using raw audio:
 
 - **High Dimensionality:** Audio signals, especially those sampled at high rates, result in large amounts of data. For example, a 1-second audio clip sampled at 16 kHz will have 16,000 individual data points. High-dimensional data increases computational complexity, leading to longer training times and higher computational costs, making it impractical for resource-constrained environments. Furthermore, the wide dynamic range of audio signals requires a significant amount of bits per sample, while conveying little useful information.
-
 - **Temporal Dependencies:** Raw audio signals have temporal structures that simple machine learning models may find hard to capture. While recurrent neural networks like [LSTMs](https://annals-csis.org/Volume_18/drp/pdf/185.pdf) can model such dependencies, they are computationally intensive and tricky to train on tiny devices.
-
 - **Noise and Variability:** Raw audio signals often contain background noise and other non-essential elements affecting model performance. Additionally, the same sound can have different characteristics based on various factors such as distance from the microphone, the orientation of the sound source, and acoustic properties of the environment, adding to the complexity of the data.
-
 - **Lack of Semantic Meaning:** Raw audio doesn't inherently contain semantically meaningful features for classification tasks. Features like pitch, tempo, and spectral characteristics, which can be crucial for speech recognition, are not directly accessible from raw waveform data.
-
 - **Signal Redundancy:** Audio signals often contain redundant information, with certain portions of the signal contributing little to no value to the task at hand. This redundancy can make learning inefficient and potentially lead to overfitting.
 
 For these reasons, feature extraction techniques such as Mel-frequency Cepstral Coefficients (MFCCs), Mel-Frequency Energies (MFEs), and simple Spectograms are commonly used to transform raw audio data into a more manageable and informative format. These features capture the essential characteristics of the audio signal while reducing dimensionality and noise, facilitating more effective machine learning.
@@ -96,9 +91,7 @@ In summary, MFCCs offer a balance of information richness and computational effi
 The computation of Mel-frequency Cepstral Coefficients (MFCCs) involves several key steps. Let's walk through these, which are particularly important for Keyword Spotting (KWS) tasks on TinyML devices.
 
 - **Pre-emphasis:** The first step is pre-emphasis, which is applied to accentuate the high-frequency components of the audio signal and balance the frequency spectrum. This is achieved by applying a filter that amplifies the difference between consecutive samples. The formula for pre-emphasis is: y(t) = x(t) - $\alpha$ x(t-1) , where $\alpha$ is the pre-emphasis factor, typically around 0.97.
-
 - **Framing:** Audio signals are divided into short frames (the *frame length*), usually 20 to 40 milliseconds. This is based on the assumption that frequencies in a signal are stationary over a short period. Framing helps in analyzing the signal in such small time slots. The *frame stride* (or step) will displace one frame and the adjacent. Those steps could be sequential or overlapped.
-
 - **Windowing:** Each frame is then windowed to minimize the discontinuities at the frame boundaries. A commonly used window function is the Hamming window. Windowing prepares the signal for a Fourier transform by minimizing the edge effects. The image below shows three frames (10, 20, and 30) and the time samples after windowing (note that the frame length and frame stride are 20 ms):
 
 ![](images/jpg/frame_wind.jpg)
@@ -119,7 +112,7 @@ The computation of Mel-frequency Cepstral Coefficients (MFCCs) involves several 
 
 ## Hands-On using Python
 
-Let's apply what we discussed while working on an actual audio sample. Open the notebook on Google CoLab and extract the MLCC features on your audio samples: [\[Open In Colab\]](https://colab.research.google.com/github/Mjrovai/Arduino_Nicla_Vision/blob/main/KWS/Audio_Data_Analysis.ipynb)
+Let's apply what we discussed while working on an actual audio sample. Open the notebook on Google CoLab and extract the MLCC features on your audio samples: [\[Open In Colab\]](https://colab.research.google.com/github/SMC-AAU-CPH/SPIS/blob/main/04-SharedLab/Audio_Data_Analysis.ipynb)
 
 ## Conclusion
 
@@ -146,4 +139,4 @@ In general, MFCCs are more focused on capturing the envelope of the power spectr
 
 ## Resources
 
-- [Audio_Data_Analysis Colab Notebook](https://colab.research.google.com/github/Mjrovai/Arduino_Nicla_Vision/blob/main/KWS/Audio_Data_Analysis.ipynb)
+- [Audio_Data_Analysis Colab Notebook](https://colab.research.google.com/github/SMC-AAU-CPH/SPIS/blob/main/04-SharedLab/Audio_Data_Analysis.ipynb)

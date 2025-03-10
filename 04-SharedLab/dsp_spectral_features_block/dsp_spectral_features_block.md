@@ -1,6 +1,6 @@
-# DSP Spectral Features 
+# DSP Spectral Features
 
-![*DALL·E 3 Prompt: 1950s style cartoon illustration of a Latin male and female scientist in a vibration research room. The man is using a calculus ruler to examine ancient circuitry. The woman is at a computer with complex vibration graphs. The wooden table has boards with sensors, prominently an accelerometer. A classic, rounded-back computer shows the Arduino IDE with code for LED pin assignments and machine learning algorithms for movement detection. The Serial Monitor displays FFT, classification, wavelets, and DSPs. Vintage lamps, tools, and charts with FFT and Wavelets graphs complete the scene.*](images/jpg/dsp_ini.jpg)
+![DALL·E 3 Prompt: 1950s style cartoon illustration of a Latin male and female scientist in a vibration research room. The man is using a calculus ruler to examine ancient circuitry. The woman is at a computer with complex vibration graphs. The wooden table has boards with sensors, prominently an accelerometer. A classic, rounded-back computer shows the Arduino IDE with code for LED pin assignments and machine learning algorithms for movement detection. The Serial Monitor displays FFT, classification, wavelets, and DSPs. Vintage lamps, tools, and charts with FFT and Wavelets graphs complete the scene.](images/jpg/dsp_ini.jpg)
 
 ## Overview
 
@@ -22,9 +22,9 @@ Extracting features from a dataset captured with inertial sensors, such as accel
 
 **Feature extraction:** Once the data is preprocessed and segmented, you can extract features that describe the motion's characteristics. Some typical features extracted from accelerometer data include:
 
--   **Time-domain** features describe the data's [statistical properties](https://www.mdpi.com/1424-8220/22/5/2012) within each segment, such as mean, median, standard deviation, skewness, kurtosis, and zero-crossing rate.
--   **Frequency-domain** features are obtained by transforming the data into the frequency domain using techniques like the [Fast Fourier Transform (FFT)](https://en.wikipedia.org/wiki/Fast_Fourier_transform). Some typical frequency-domain features include the power spectrum, spectral energy, dominant frequencies (amplitude and frequency), and spectral entropy.
--   **Time-frequency** domain features combine the time and frequency domain information, such as the [Short-Time Fourier Transform (STFT)](https://en.wikipedia.org/wiki/Short-time_Fourier_transform) or the [Discrete Wavelet Transform (DWT)](https://en.wikipedia.org/wiki/Discrete_wavelet_transform). They can provide a more detailed understanding of how the signal's frequency content changes over time.
+- **Time-domain** features describe the data's [statistical properties](https://www.mdpi.com/1424-8220/22/5/2012) within each segment, such as mean, median, standard deviation, skewness, kurtosis, and zero-crossing rate.
+- **Frequency-domain** features are obtained by transforming the data into the frequency domain using techniques like the [Fast Fourier Transform (FFT)](https://en.wikipedia.org/wiki/Fast_Fourier_transform). Some typical frequency-domain features include the power spectrum, spectral energy, dominant frequencies (amplitude and frequency), and spectral entropy.
+- **Time-frequency** domain features combine the time and frequency domain information, such as the [Short-Time Fourier Transform (STFT)](https://en.wikipedia.org/wiki/Short-time_Fourier_transform) or the [Discrete Wavelet Transform (DWT)](https://en.wikipedia.org/wiki/Discrete_wavelet_transform). They can provide a more detailed understanding of how the signal's frequency content changes over time.
 
 In many cases, the number of extracted features can be large, which may lead to overfitting or increased computational complexity. Feature selection techniques, such as mutual information, correlation-based methods, or principal component analysis (PCA), can help identify the most relevant features for a given application and reduce the dimensionality of the dataset. The Studio can help with such feature-relevant calculations.
 
@@ -36,10 +36,10 @@ Let's explore in more detail a typical TinyML Motion Classification project cove
 
 In the hands-on project, *Motion Classification and Anomaly Detection*, we simulated mechanical stresses in transport, where our problem was to classify four classes of movement:
 
--   **Maritime** (pallets in boats)
--   **Terrestrial** (pallets in a Truck or Train)
--   **Lift** (pallets being handled by Fork-Lift)
--   **Idle** (pallets in Storage houses)
+- **Maritime** (pallets in boats)
+- **Terrestrial** (pallets in a Truck or Train)
+- **Lift** (pallets being handled by Fork-Lift)
+- **Idle** (pallets in Storage houses)
 
 The accelerometers provided the data on the pallet (or container).
 
@@ -71,23 +71,23 @@ In 2022, Edge Impulse released version 2 of the Spectral Analysis block, which w
 
 In Version 2, Time Domain Statistical features per axis/channel are:
 
--   RMS
--   Skewness
--   Kurtosis
+- RMS
+- Skewness
+- Kurtosis
 
 And the Frequency Domain Spectral features per axis/channel are:
 
--   Spectral Power
--   Skewness (in the next version)
--   Kurtosis (in the next version)
+- Spectral Power
+- Skewness (in the next version)
+- Kurtosis (in the next version)
 
 In this [link,](https://docs.edgeimpulse.com/docs/edge-impulse-studio/processing-blocks/spectral-features) we can have more details about the feature extraction.
 
-> Clone the [public project](https://studio.edgeimpulse.com/public/198358/latest). You can also follow the explanation, playing with the code using my Google CoLab Notebook: [Edge Impulse Spectral Analysis Block Notebook](https://colab.research.google.com/github/Mjrovai/TinyML4D/blob/main/SciTinyM-2023/Edge_Impulse-Spectral_Analysis_Block/Edge_Impulse_Spectral_Analysis_Block_V3.ipynb).
+> Clone the [public project](https://studio.edgeimpulse.com/public/198358/latest). You can also follow the explanation, playing with the code using my Google CoLab Notebook: [Edge Impulse Spectral Analysis Block Notebook](https://colab.research.google.com/github/SMC-AAU-CPH/SPIS/blob/main/04-SharedLab/Edge_Impulse_Spectral_Analysis_Block_V3.ipynb).
 
 Start importing the libraries:
 
-``` python
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -105,12 +105,12 @@ plt.rcParams['lines.linewidth'] = 3
 
 From the studied project, let's choose a data sample from accelerometers as below:
 
--   Window size of 2 seconds: `[2,000]` ms
--   Sample frequency: `[62.5]` Hz
--   We will choose the `[None]` filter (for simplicity) and a
--   FFT length: `[16]`.
+- Window size of 2 seconds: `[2,000]` ms
+- Sample frequency: `[62.5]` Hz
+- We will choose the `[None]` filter (for simplicity) and a
+- FFT length: `[16]`.
 
-``` python
+```python
 f =  62.5 # Hertz
 wind_sec = 2 # seconds
 FFT_Lenght = 16
@@ -126,7 +126,7 @@ Selecting the *Raw Features* on the Studio Spectral Analysis tab, we can copy al
 
 Paste the data points to a new variable *data*:
 
-``` python
+```python
 data=[-5.6330, 0.2376, 9.8701, -5.9442, 0.4830, 9.8701, -5.4217, ...]
 No_raw_features = len(data)
 N = int(No_raw_features/n_sensors)
@@ -140,7 +140,7 @@ We aim to understand how Edge Impulse gets the processed features.
 
 So, you should also past the processed features on a variable (to compare the calculated features in Python with the ones provided by the Studio) :
 
-``` python
+```python
 features = [2.7322, -0.0978, -0.3813, 2.3980, 3.8924, 24.6841, 9.6303, ...]
 N_feat = len(features)
 N_feat_axis = int(N_feat/n_sensors)
@@ -150,17 +150,17 @@ The total number of processed features is 39, which means 13 features/axis.
 
 Looking at those 13 features closely, we will find 3 for the time domain (RMS, Skewness, and Kurtosis):
 
--   `[rms] [skew] [kurtosis]`
+- `[rms] [skew] [kurtosis]`
 
 and 10 for the frequency domain (we will return to this later).
 
--   `[spectral skew][spectral kurtosis][Spectral Power 1] ... [Spectral Power 8]`
+- `[spectral skew][spectral kurtosis][Spectral Power 1] ... [Spectral Power 8]`
 
 **Splitting raw data per sensor**
 
 The data has samples from all axes; let's split and plot them separately:
 
-``` python
+```python
 def plot_data(sensors, axis, title):
     [plt.plot(x, label=y) for x,y in zip(sensors, axis)]
     plt.legend(loc='lower right')
@@ -186,12 +186,12 @@ Next, we should subtract the mean from the *data*. Subtracting the mean from a d
 
 Here are some specific reasons why subtracting the mean can be helpful:
 
--   It simplifies analysis: By centering the data, the mean becomes zero, making some calculations simpler and easier to interpret.
--   It removes bias: If the data is biased, subtracting the mean can remove it and allow for a more accurate analysis.
--   It can reveal patterns: Centering the data can help uncover patterns that might be hidden if the data is not centered. For example, centering the data can help you identify trends over time if you analyze a time series dataset.
--   It can improve performance: In some machine learning algorithms, centering the data can improve performance by reducing the influence of outliers and making the data more easily comparable. Overall, subtracting the mean is a simple but powerful technique that can be used to improve the analysis and interpretation of data.
+- It simplifies analysis: By centering the data, the mean becomes zero, making some calculations simpler and easier to interpret.
+- It removes bias: If the data is biased, subtracting the mean can remove it and allow for a more accurate analysis.
+- It can reveal patterns: Centering the data can help uncover patterns that might be hidden if the data is not centered. For example, centering the data can help you identify trends over time if you analyze a time series dataset.
+- It can improve performance: In some machine learning algorithms, centering the data can improve performance by reducing the influence of outliers and making the data more easily comparable. Overall, subtracting the mean is a simple but powerful technique that can be used to improve the analysis and interpretation of data.
 
-``` python
+```python
 dtmean = [(sum(x)/len(x)) for x in sensors]
 [print('mean_'+x+'= ', round(y, 4)) for x,y in zip(axis, dtmean)][0]
 
@@ -217,14 +217,14 @@ In the case of a set of n values {𝑥1, 𝑥2, ..., 𝑥𝑛}, the RMS is:
 
 > NOTE that the RMS value is different for the original raw data, and after subtracting the mean
 
-``` py
+```py
 # Using numpy and standartized data (subtracting mean)
 rms = [np.sqrt(np.mean(np.square(x))) for x in sensors]
 ```
 
 We can compare the calculated RMS values here with the ones presented by Edge Impulse:
 
-``` python
+```python
 [print('rms_'+x+'= ', round(y, 4)) for x,y in zip(axis, rms)][0]
 print("\nCompare with Edge Impulse result features")
 print(features[0:N_feat:N_feat_axis])
@@ -246,7 +246,7 @@ In statistics, skewness and kurtosis are two ways to measure the **shape of a di
 
 Here, we can see the sensor values distribution:
 
-``` python
+```python
 fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(13, 4))
 sns.kdeplot(accX, fill=True, ax=axes[0])
 sns.kdeplot(accY, fill=True, ax=axes[1])
@@ -264,11 +264,11 @@ plt.show()
 
 ![](images/png/skew_2.png)
 
--   A negative skew indicates that the tail is on the left side of the distribution, which extends towards more negative values.
--   A positive skew indicates that the tail is on the right side of the distribution, which extends towards more positive values.
--   A zero value indicates no skewness in the distribution at all, meaning the distribution is perfectly symmetrical.
+- A negative skew indicates that the tail is on the left side of the distribution, which extends towards more negative values.
+- A positive skew indicates that the tail is on the right side of the distribution, which extends towards more positive values.
+- A zero value indicates no skewness in the distribution at all, meaning the distribution is perfectly symmetrical.
 
-``` python
+```python
 skew = [skew(x, bias=False) for x in sensors]
 [print('skew_'+x+'= ', round(y, 4)) for x,y in zip(axis, skew)][0]
 print("\nCompare with Edge Impulse result features")
@@ -289,11 +289,11 @@ Compared with Edge Impulse result features:
 
 ![](images/png/kurto.png)
 
--   The kurtosis of a normal distribution is zero.
--   If a given distribution has a negative kurtosis, it is said to be playkurtic, which means it tends to produce fewer and less extreme outliers than the normal distribution.
--   If a given distribution has a positive kurtosis , it is said to be leptokurtic, which means it tends to produce more outliers than the normal distribution.
+- The kurtosis of a normal distribution is zero.
+- If a given distribution has a negative kurtosis, it is said to be playkurtic, which means it tends to produce fewer and less extreme outliers than the normal distribution.
+- If a given distribution has a positive kurtosis , it is said to be leptokurtic, which means it tends to produce more outliers than the normal distribution.
 
-``` python
+```python
 kurt = [kurtosis(x, bias=False) for x in sensors]
 [print('kurt_'+x+'= ', round(y, 4)) for x,y in zip(axis, kurt)][0]
 print("\nCompare with Edge Impulse result features")
@@ -318,13 +318,13 @@ Since the sampled window is usually larger than the FFT size, the window will be
 
 **FFT length** - The FFT size. This determines the number of FFT bins and the resolution of frequency peaks that can be separated. A low number means more signals will average together in the same FFT bin, but it also reduces the number of features and model size. A high number will separate more signals into separate bins, generating a larger model.
 
--   The total number of Spectral Power features will vary depending on how you set the filter and FFT parameters. With No filtering, the number of features is 1/2 of the FFT Length.
+- The total number of Spectral Power features will vary depending on how you set the filter and FFT parameters. With No filtering, the number of features is 1/2 of the FFT Length.
 
 **Spectral Power - Welch's method**
 
-We should use [Welch's method](https://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.signal.welch.html) to split the signal on the frequency domain in bins and calculate the power spectrum for each bin. This method divides the signal into overlapping segments, applies a window function to each segment, computes the periodogram of each segment using DFT, and averages them to obtain a smoother estimate of the power spectrum.
+We should use [Welch&#39;s method](https://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.signal.welch.html) to split the signal on the frequency domain in bins and calculate the power spectrum for each bin. This method divides the signal into overlapping segments, applies a window function to each segment, computes the periodogram of each segment using DFT, and averages them to obtain a smoother estimate of the power spectrum.
 
-``` python
+```python
 # Function used by Edge Impulse instead of scipy.signal.welch().
 def welch_max_hold(fx, sampling_freq, nfft, n_overlap):
     n_overlap = int(n_overlap)
@@ -340,7 +340,7 @@ def welch_max_hold(fx, sampling_freq, nfft, n_overlap):
 
 Applying the above function to 3 signals:
 
-``` python
+```python
 fax,Pax = welch_max_hold(accX, fs, FFT_Lenght, 0)
 fay,Pay = welch_max_hold(accY, fs, FFT_Lenght, 0)
 faz,Paz = welch_max_hold(accZ, fs, FFT_Lenght, 0)
@@ -349,7 +349,7 @@ specs = [Pax, Pay, Paz ]
 
 We can plot the Power Spectrum P(f):
 
-``` python
+```python
 plt.plot(fax,Pax, label='accX')
 plt.plot(fay,Pay, label='accY')
 plt.plot(faz,Paz, label='accZ')
@@ -367,14 +367,14 @@ plt.show()
 
 Besides the Power Spectrum, we can also include the skewness and kurtosis of the features in the frequency domain (should be available on a new version):
 
-``` python
+```python
 spec_skew = [skew(x, bias=False) for x in specs]
 spec_kurtosis = [kurtosis(x, bias=False) for x in specs]
 ```
 
 Let's now list all Spectral features per axis and compare them with EI:
 
-``` python
+```python
 print("EI Processed Spectral features (accX): ")
 print(features[3:N_feat_axis][0:])
 print("\nCalculated features:")
@@ -391,7 +391,7 @@ Calculated features:
 
 2.9069 8.5569 24.6844 9.6304 8.4865 7.7794 2.9964 5.6242 3.4198 4.2736
 
-``` python
+```python
 print("EI Processed Spectral features (accY): ")
 print(features[16:26][0:]) #13: 3+N_feat_axis;  26 = 2x N_feat_axis
 print("\nCalculated features:")
@@ -408,7 +408,7 @@ Calculated features:
 
 1.1426 -0.3886 5.4289 0.999 1.0315 0.9458 1.8116 0.9088 1.3301 3.1121
 
-``` python
+```python
 print("EI Processed Spectral features (accZ): ")
 print(features[29:][0:]) #29: 3+(2*N_feat_axis);
 print("\nCalculated features:")
@@ -439,15 +439,15 @@ Wavelets have many practical applications, including signal and image compressio
 
 Let's select Wavelet on the Spectral Features block in the same project:
 
--   Type: Wavelet
--   Wavelet Decomposition Level: 1
--   Wavelet: bior1.3
+- Type: Wavelet
+- Wavelet Decomposition Level: 1
+- Wavelet: bior1.3
 
 ![](images/png/fft_result.png)
 
 **The Wavelet Function**
 
-``` python
+```python
 wavelet_name='bior1.3'
 num_layer = 1
 
@@ -468,7 +468,7 @@ As we did before, let's copy and past the Processed Features:
 
 ![](images/png/wav_processed.png)
 
-``` python
+```python
 features = [3.6251, 0.0615, 0.0615, -7.3517, -2.7641, 2.8462, 5.0924, ...]
 N_feat = len(features)
 N_feat_axis = int(N_feat/n_sensors)
@@ -478,13 +478,13 @@ Edge Impulse computes the [Discrete Wavelet Transform (DWT)](https://pywavelets.
 
 In the case of **Wavelets**, the extracted features are *basic statistical values*, *crossing values*, and *entropy.* There are, in total, 14 features per layer as below:
 
--   \[11\] Statiscal Features: **n5, n25, n75, n95, mean, median,** standard deviation **(std)**, variance **(var)** root mean square **(rms), kurtosis**, and skewness **(skew)**.
--   \[2\] Crossing Features: Zero crossing rate **(zcross)** and mean crossing rate **(mcross)** are the times that the signal passes through the baseline (y = 0) and the average level (y = u) per unit of time, respectively
--   \[1\] Complexity Feature: **Entropy** is a characteristic measure of the complexity of the signal
+- \[11\] Statiscal Features: **n5, n25, n75, n95, mean, median,** standard deviation **(std)**, variance **(var)** root mean square **(rms), kurtosis**, and skewness **(skew)**.
+- \[2\] Crossing Features: Zero crossing rate **(zcross)** and mean crossing rate **(mcross)** are the times that the signal passes through the baseline (y = 0) and the average level (y = u) per unit of time, respectively
+- \[1\] Complexity Feature: **Entropy** is a characteristic measure of the complexity of the signal
 
 All the above 14 values are calculated for each Layer (including L0, the original signal)
 
--   The total number of features varies depending on how you set the filter and the number of layers. For example, with \[None\] filtering and Level\[1\], the number of features per axis will be 14 x 2 (L0 and L1) = 28. For the three axes, we will have a total of 84 features.
+- The total number of features varies depending on how you set the filter and the number of layers. For example, with \[None\] filtering and Level\[1\], the number of features per axis will be 14 x 2 (L0 and L1) = 28. For the three axes, we will have a total of 84 features.
 
 ### Wavelet Analysis
 
@@ -492,7 +492,7 @@ Wavelet analysis decomposes the signal (**accX, accY**, **and accZ**) into diffe
 
 Only the low-frequency components (approximation coefficients, or cA) will be used. In this example, we assume only one level (Single-level Discrete Wavelet Transform), where the function will return a tuple. With a multilevel decomposition, the "Multilevel 1D Discrete Wavelet Transform", the result will be a list (for detail, please see: [Discrete Wavelet Transform (DWT)](https://pywavelets.readthedocs.io/en/latest/ref/dwt-discrete-wavelet-transform.html) )
 
-``` python
+```python
 (accX_l1, accX_d1) = pywt.dwt(accX, wavelet_name)
 (accY_l1, accY_d1) = pywt.dwt(accY, wavelet_name)
 (accZ_l1, accZ_d1) = pywt.dwt(accZ, wavelet_name)
@@ -517,7 +517,7 @@ plt.show()
 
 Let's start with the basic statistical features. Note that we apply the function for both the original signals and the resultant cAs from the DWT:
 
-``` python
+```python
 def calculate_statistics(signal):
     n5 = np.percentile(signal, 5)
     n25 = np.percentile(signal, 25)
@@ -536,7 +536,7 @@ stat_feat_l1 = [calculate_statistics(x) for x in sensors_l1]
 
 The Skelness and Kurtosis:
 
-``` python
+```python
 skew_l0 = [skew(x, bias=False) for x in sensors]
 skew_l1 = [skew(x, bias=False) for x in sensors_l1]
 kurtosis_l0 = [kurtosis(x, bias=False) for x in sensors]
@@ -547,7 +547,7 @@ kurtosis_l1 = [kurtosis(x, bias=False) for x in sensors_l1]
 
 **Mean crossing (mcross)**, on the other hand, is the number of times the wavelet coefficient crosses the mean of the signal. It can be used to measure the amplitude since high-amplitude signals tend to have more mean crossings than low-amplitude signals.
 
-``` python
+```python
 def getZeroCrossingRate(arr):
     my_array = np.array(arr)
     zcross = float("{0:.2f}".format((((my_array[:-1] * my_array[1:]) < 0).su    m())/len(arr)))
@@ -573,7 +573,7 @@ cross_l1 = calculate_crossings(sensors_l1)
 
 In wavelet analysis, **entropy** refers to the degree of disorder or randomness in the distribution of wavelet coefficients. Here, we used Shannon entropy, which measures a signal's uncertainty or randomness. It is calculated as the negative sum of the probabilities of the different possible outcomes of the signal multiplied by their base 2 logarithm. In the context of wavelet analysis, Shannon entropy can be used to measure the complexity of the signal, with higher values indicating greater complexity.
 
-``` python
+```python
 def calculate_entropy(signal, base=None):
     value, counts = np.unique(signal, return_counts=True)
     return entropy(counts, base=base)
@@ -584,7 +584,7 @@ entropy_l1 = [calculate_entropy(x) for x in sensors_l1]
 
 Let's now list all the wavelet features and create a list by layers.
 
-``` python
+```python
 L1_features_names = ["L1-n5", "L1-n25", "L1-n75", "L1-n95", "L1-median", "L1-mean", "L1-std", "L1-var", "L1-rms", "L1-skew", "L1-Kurtosis", "L1-zcross", "L1-mcross", "L1-entropy"]
 
 L0_features_names = ["L0-n5", "L0-n25", "L0-n75", "L0-n95", "L0-median", "L0-mean", "L0-std", "L0-var", "L0-rms", "L0-skew", "L0-Kurtosis", "L0-zcross", "L0-mcross", "L0-entropy"]
