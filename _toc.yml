@@ -33,7 +33,6 @@ parts:
     chapters:
     - file: 07-Torch/README.md
     - file: 08-Workshop/README.md
-      sections:
-      - file: 08-Workshop/ML_for_Audio.ipynb
-      - file: 08-Workshop/LPC/README.ipynb
-      - file: A1-Torch/TorchLossViz.ipynb
+    - file: 08-Workshop/ML_for_Audio.ipynb
+    - file: 08-Workshop/LPC/README.ipynb
+    - file: A1-Torch/TorchLossViz.ipynb
