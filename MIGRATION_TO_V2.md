@@ -38,8 +38,8 @@ The new `myst.yml` file uses a different structure:
 
 Updated `.github/workflows/deploy-book.yml`:
 - Changed build command to `jupyter book build --html`
-- Updated trigger branch to `jupyter-book-v2`
-- Set BASE_URL to `/SPISv2` for deployment path
+- Updated trigger branch to `main`
+- Set BASE_URL to `/SPIS` for deployment path
 - Output is still in `_build/html`
 
 ### Dependencies
@@ -49,11 +49,9 @@ Updated `requirements.txt`:
 
 ## Deployment
 
-The book is configured to be deployed to: **https://med-aau-cph.github.io/SPISv2**
+The book is configured to be deployed to: **https://smc-aau-cph.github.io/SPIS**
 
-**Note**: The deployment URL uses the `med-aau-cph` organization, which is different from the repository's `SMC-AAU-CPH` organization. This may require additional GitHub Pages configuration or a separate deployment setup outside of this repository.
-
-When changes are pushed to the `jupyter-book-v2` branch, GitHub Actions will:
+When changes are pushed to the `main` branch, GitHub Actions will:
 1. Install dependencies (including jupyter-book v2)
 2. Build the book using MyST
 3. Deploy to GitHub Pages

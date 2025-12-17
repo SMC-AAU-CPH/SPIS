@@ -1,10 +1,10 @@
 name: deploy-book
 
-# Run this when the jupyter-book-v2 branch changes
+# Run this when the main branch changes
 on:
   push:
     branches:
-    - jupyter-book-v2
+    - main
     # If your git repository has the Jupyter Book within some-subfolder next to
     # unrelated files, you can make this run only if a file within that specific
     # folder has been modified.
@@ -12,11 +12,9 @@ on:
     # paths:
     # - some-subfolder/**
   workflow_dispatch: # manually trigger the workflow for testing.
-    branches:
-    - jupyter-book-v2
 
 env:
-  BASE_URL: /SPISv2
+  BASE_URL: /SPIS
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
