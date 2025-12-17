@@ -4,7 +4,7 @@ name: deploy-book
 on:
   push:
     branches:
-    - jupyter-book-v2
+    - main
     # If your git repository has the Jupyter Book within some-subfolder next to
     # unrelated files, you can make this run only if a file within that specific
     # folder has been modified.
@@ -13,7 +13,7 @@ on:
     # - some-subfolder/**
   workflow_dispatch: # manually trigger the workflow for testing.
     branches:
-    - jupyter-book-v2
+    - main
 
 env:
   BASE_URL: "/SPIS"
@@ -25,6 +25,38 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  badges:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Optional: set up Python if the action needs it
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # Run the Colab Badge Action
+      - name: Generate "Open in Colab" badges
+        uses: trsvchn/colab-badge-action@v4
+        with:
+          # Optional filters; defaults scan the whole repo.
+          # paths: "notebooks/**/*.ipynb README.md docs/**/*.md"
+          # branch: "main"   # If your default branch differs
+          # repo: "SMC-AAU-CPH/SPIS"  # Explicitly set if needed
+
+      # Commit back changes (the action can do it; if not, do it here)
+      - name: Commit & push changes
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore: update Colab badges [skip ci]"
+            git push
+          fi
+
   deploy-book:
     runs-on: ubuntu-latest
     permissions:
