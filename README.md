@@ -35,3 +35,21 @@ Mathematical theory: postponed to PhD level:
 # CONTENT
 
 * Chapter 4 is based on "Introduction to Machine Learning Systems" (Shared Lab) licensed at [https://github.com/harvard-edge/cs249r_book]() under [Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/) License.
+
+## Building the Book
+
+This book uses Jupyter Book v2 (powered by MyST). To build the book locally:
+
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. Build the HTML version:
+   ```bash
+   jupyter book build --html
+   ```
+
+3. The built site will be in `_build/html/`
+
+For more information about Jupyter Book v2, see [mystmd.org](https://mystmd.org).

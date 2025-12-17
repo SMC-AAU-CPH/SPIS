@@ -1,0 +1,52 @@
+version: 1
+project:
+  title: Signal Processing for Interactive Systems
+  authors:
+    - name: Cumhur Erkut
+  copyright: '2025'
+  github: SMC-AAU-CPH/SPIS
+  bibliography:
+    - cerkut.bib
+  exports:
+    - format: pdf
+      template: plain_latex_book
+      output: exports/book.pdf
+  toc:
+    - file: README.md
+    - title: Introduction
+      children:
+        - file: 00-Course-intro/README.md
+    - title: Compute
+      children:
+        - file: 02-Compute/handout.md
+        - file: 02-Compute/HelloSPIS.ipynb
+    - title: librosa
+      children:
+        - file: 01-Intro-librosa/librosa-101.ipynb
+        - url: https://librosa.org/doc/latest/advanced.html
+          title: Librosa Advanced Examples
+    - title: Theory and Practice
+      children:
+        - file: 03-Fourier-Transform/SPIS03.ipynb
+        - file: 03-Fourier-Transform/03-MED-EEG.ipynb
+        - file: 03-Fourier-Transform/03-MED-TonicPhasic.ipynb
+    - title: 04-Shared Lab
+      children:
+        - file: 04-SharedLab/README.md
+        - file: 04-SharedLab/Audio_Data_Analysis.ipynb
+        - file: 04-SharedLab/Edge_Impulse_Spectral_Analysis_Block_V3.ipynb
+    - title: Audiovisual Applications of Spectral Processing
+      children:
+        - file: 05-Spectral-Chromogram-Motiongram/MusicalGesturesToolbox.ipynb
+    - title: torch workshops
+      children:
+        - file: 07-Torch/README.md
+        - file: 08-Workshop/README.md
+        - file: 08-Workshop/ML_for_Audio.ipynb
+        - file: 08-Workshop/LPC/README.ipynb
+        - file: A1-Torch/TorchLossViz.ipynb
+site:
+  options:
+    logo: logo.png
+    favicon: favicon.ico
+  template: book-theme
