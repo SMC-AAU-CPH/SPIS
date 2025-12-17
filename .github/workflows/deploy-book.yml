@@ -16,7 +16,7 @@ on:
     - jupyter-book-v2
 
 env:
-  BASE_URL: /${{ github.event.repository.name }}
+  BASE_URL: /SPISv2
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
