@@ -5,6 +5,7 @@ project:
     - name: Cumhur Erkut
   copyright: '2025'
   github: SMC-AAU-CPH/SPIS
+  jupyter: true
   bibliography:
     - cerkut.bib
   exports:
