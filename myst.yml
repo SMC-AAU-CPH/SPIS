@@ -16,6 +16,7 @@ project:
     - title: Introduction
       children:
         - file: 00-Course-intro/README.md
+        - file: 00-Course-intro/00-Sampling.ipynb
     - title: Compute
       children:
         - file: 02-Compute/handout.md

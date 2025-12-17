@@ -43,7 +43,7 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt install ffmpeg
-        pip install -r requirements.txt
+        pip install --pre -r requirements.txt
 
     # Build the book
     - name: Build the book

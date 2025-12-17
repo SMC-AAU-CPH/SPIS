@@ -64,8 +64,9 @@ To build the book locally:
 
 1. Install dependencies:
    ```bash
-   pip install -r requirements.txt
+   pip install --pre -r requirements.txt
    ```
+   *Note: The `--pre` flag is currently required as Jupyter Book v2 is in pre-release.*
 
 2. Build the HTML version:
    ```bash

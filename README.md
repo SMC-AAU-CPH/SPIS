@@ -1,8 +1,6 @@
 Signal Processing for Interactive Systems
 =========================================
 
-Cumhur Erkut, Anders Bargum, and Signe T Henriksen
-
 With previous material from Jesper R Jensen, Ernests Lavrinovits, Mubarik Jamal Muuse, and Jesper K Nielsen.
 
 A graduate course in Aalborg University Medialogy and Sound & Music Computing programs.
