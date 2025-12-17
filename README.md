@@ -28,7 +28,7 @@ Time-frequency signal analysis/synthesis suitable for machine / deep learning ta
 Mathematical theory: postponed to PhD level:
 
 - [https://www.numerical-tours.com](https://www.numerical-tours.com)
-- [https://mathematical-tours.github.io]()
+- [https://mathematical-tours.github.io](https://mathematical-tours.github.io)
 
 # CONTENT
 
