@@ -25,38 +25,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  badges:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      # Optional: set up Python if the action needs it
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      # Run the Colab Badge Action
-      - name: Generate "Open in Colab" badges
-        uses: trsvchn/colab-badge-action@v4
-        with:
-          # Optional filters; defaults scan the whole repo.
-          # paths: "notebooks/**/*.ipynb README.md docs/**/*.md"
-          # branch: "main"   # If your default branch differs
-          # repo: "SMC-AAU-CPH/SPIS"  # Explicitly set if needed
-
-      # Commit back changes (the action can do it; if not, do it here)
-      - name: Commit & push changes
-        run: |
-          if [[ -n "$(git status --porcelain)" ]]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add -A
-            git commit -m "chore: update Colab badges [skip ci]"
-            git push
-          fi
-
   deploy-book:
     runs-on: ubuntu-latest
     permissions:
