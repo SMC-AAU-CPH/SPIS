@@ -18,6 +18,7 @@ project:
       children:
         - file: 00-Course-intro/README.md
         - file: 00-Course-intro/00-Sampling.ipynb
+        - file: 00-Course-intro/01-SoundVibrationComplex.ipynb
     - title: Compute
       children:
         - file: 02-Compute/handout.md
