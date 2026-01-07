@@ -25,10 +25,12 @@ Time-frequency signal analysis/synthesis suitable for machine / deep learning ta
 
 ![Time-frequency relations](TF.png)
 
-Mathematical theory: postponed to PhD level:
+Mathematical theory: conceptually used, detailed postponed to PhD level
 
 - [https://www.numerical-tours.com](https://www.numerical-tours.com)
 - [https://mathematical-tours.github.io](https://mathematical-tours.github.io)
+
+A PhD Course on the SPIS topics: https://phd.moodle.aau.dk/blocks/vitrina/detail.php?id=2863 
 
 # CONTENT
 
