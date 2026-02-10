@@ -3,9 +3,10 @@ project:
   title: Signal Processing for Interactive Systems
   authors:
     - name: Cumhur Erkut
-  copyright: '2025'
+  copyright: '2026  '
   github: SMC-AAU-CPH/SPIS
   jupyter: true
+  matlab: false
   bibliography:
     - cerkut.bib
   exports:
@@ -17,17 +18,14 @@ project:
     - title: Introduction
       children:
         - file: 00-Course-intro/README.md
-        - file: 00-Course-intro/00-Sampling.ipynb
-        - file: 00-Course-intro/01-SoundVibrationComplex.ipynb
-    - title: Compute
+        - file: 00-Course-intro/Hello.md
+        # - file: 00-Course-intro/01-SoundVibrationComplex.ipynb
+    - title: Sampling and Reconstruction
       children:
-        - file: 02-Compute/handout.md
-        - file: 02-Compute/HelloSPIS.ipynb
-    - title: librosa
-      children:
-        - file: 01-Intro-librosa/librosa-101.ipynb
-        - url: https://librosa.org/doc/latest/advanced.html
-          title: Librosa Advanced Examples
+        - file: 01-Sampling/README.md
+        - file: 01-Sampling/00-Sampling.ipynb
+        - file: 01-Sampling/01-Sampling-Reconstruction-Resampling.ipynb
+      #  - file: 02-Compute/handout.md
     - title: Theory and Practice
       children:
         - file: 03-Fourier-Transform/SPIS03.ipynb
@@ -48,6 +46,11 @@ project:
         - file: 08-Workshop/ML_for_Audio.ipynb
         - file: 08-Workshop/LPC/README.ipynb
         - file: A1-Torch/TorchLossViz.ipynb
+    - title: librosa
+      children:
+        - file: A0-Intro-librosa/librosa-101.ipynb
+        - url: https://librosa.org/doc/latest/advanced.html
+          title: Librosa Advanced Examples
 site:
   options:
     logo: logo.png
