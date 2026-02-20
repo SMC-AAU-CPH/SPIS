@@ -26,16 +26,13 @@ project:
         - file: 01-Sampling/00-Sampling.ipynb
         - file: 01-Sampling/01-Sampling-Reconstruction-Resampling.ipynb
       #  - file: 02-Compute/handout.md
-    - title: Theory and Practice
+    - title: Fourier Transform
       children:
         - file: 03-Fourier-Transform/SPIS03.ipynb
-        - file: 03-Fourier-Transform/03-MED-EEG.ipynb
-        - file: 03-Fourier-Transform/03-MED-TonicPhasic.ipynb
-    - title: 04-Shared Lab
+    - title: Short-time Fourier Transrom
       children:
-        - file: 04-SharedLab/README.md
-        - file: 04-SharedLab/Audio_Data_Analysis.ipynb
-        - file: 04-SharedLab/Edge_Impulse_Spectral_Analysis_Block_V3.ipynb
+        - file: 04-SharedLab-STFT/README.md
+        - file: 04-SharedLab-STFT/SPIS04.ipynb
     - title: Audiovisual Applications of Spectral Processing
       children:
         - file: 05-Spectral-Chromogram-Motiongram/MusicalGesturesToolbox.ipynb
