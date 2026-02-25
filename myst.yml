@@ -29,7 +29,7 @@ project:
     - title: Fourier Transform
       children:
         - file: 03-Fourier-Transform/SPIS03.ipynb
-    - title: Short-time Fourier Transrom
+    - title: Short-time Fourier Transform, Spectrogram, and Applications
       children:
         - file: 04-SharedLab-STFT/README.md
         - file: 04-SharedLab-STFT/SPIS04.ipynb
